@@ -1,44 +1,1423 @@
-<title>星汉与远洋</title>
-<div class="header">
-  <h1>星汉与远洋</h1>
-</div>
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" style="position: fixed; width: 100%; overflow: hidden; ">
+<link rel="shortcut icon" href="/static/favicon.ico" />
+<link rel="bookmark" href="/static/favicon.ico" type="image/x-icon"　/>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=1200">
+    <title>首页 - 重庆八中OJ</title>
+    <link href="/cdnjs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link href="/self/tomorrow.css" rel="stylesheet">
+    <link href="/self/math.css" rel="stylesheet">
+　　 
+          <link href="/self/style.css?20181212" rel="stylesheet">
+    
+    <!-- <link href="/self/style.css?20181212" rel="stylesheet"> -->
+    <link href="/cdnjs/morris.js/0.5.1/morris.css" rel="stylesheet">
+    <script src="/markdown-palettes/sweetalert.min.js"></script>
+  　<!--
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert/dist/sweetalert.min.js"></script>
+    -->
+
+    
+      <link href="/google-fonts/fira-mono.css" rel="stylesheet">
+      <link href="/google-fonts/lato.css" rel="stylesheet">
+      <link href="/google-fonts/open-sans.css" rel="stylesheet">
+      <link href="/google-fonts/exo-2.css" rel="stylesheet">
+    
+
+　　 
+    <script type="text/javascript" src="./cssrefresh/cssrefresh.js"></script>
+    <script data-cfasync="false" src="/cdnjs/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
  
-<div class="navbar">
-  <a href="https://saf123.mysxl.cn/" target=“_blank”rel=“noopener noreferrer”>访问星汉与远洋主网站</a>
-  <br />
-  <a href="https://saf-d.github.io/saf-D/" target=“_blank”rel=“noopener noreferrer”>访问星汉与远洋介绍网站</a>
-  <br />
-  <a href="#">链接</a>
-  <br />
-</div>
+
+<body style="position: relative; margin-top: 49px; height: calc(100% - 49px); overflow-y: overlay; ">
+    <div class="ui fixed borderless menu" style="position: fixed; height: 49px; ">
+
+    
+        <div class="ui container">
+            
+            <a href="/"><img src="/logo/login_logo.png" style="width: 45px; height: 45px; "></a>
+            
+            <a style="font-weight:bold;" class="item" href="/"><i class="home icon"></i> 首页</a>
+            <a style="font-weight:bold;" class="item" href="/problems"><i class="list icon"></i> 题库</a>
+            <a style="font-weight:bold;" class="item" href="/schedules"><i class="book icon"></i> 题单</a>
+	          <a style="font-weight:bold;" class="item" href="/training"><i class="pencil icon"></i> 训练</a>
+            <a style="font-weight:bold;" class="item" href="/contests"><i class="calendar icon"></i> 比赛</a>
+            <a style="font-weight:bold;" class="item" href="/corrections"><i class="check icon"></i> 订正</a>
+            <a style="font-weight:bold;" class="item" href="/submissions"><i class="tasks icon"></i> 评测</a>
+            <a style="font-weight:bold;" class="item" href="/ranklist"><i class="signal icon"></i> 排名</a>
+	          <a style="font-weight:bold;" class="item" href="/discussion/global"><i class="comments icon"></i> 讨论</a>
+            <a style="font-weight:bold;" class="item" href="/teachers"><i class="box icon"></i> 师者</a>
  
-<div class="row">
-  <div class="side">
-      <h2>关于我</h2>
-      <h5>我的照片:</h5>
-      <div class="fakeimg" style="height:200px;"><img src="https://pic1.imgdb.cn/item/6367c3fb16f2c2beb1b90f2f.png"></div>
-      <p>关于我的介绍..</p>
-      <h3>更多内容</h3>
-      <p>我的更多内容</p>
-      <div class="fakeimg" style="height:60px;">这边插入图像</div><br>
-      <div class="fakeimg" style="height:60px;">这边插入图像</div><br>
-      <div class="fakeimg" style="height:60px;">这边插入图像</div>
+              　　　　　<a style="font-weight:bold;"  class="item" href="/calendar"><i class="calendar alternate icon"></i>近期比赛</a>
+ 
+      <a style="font-weight:bold;" class="item" id="theme-mode" onclick="setDark()"><i class="moon icon"></i>主题</a>
+              <script>
+                localStorage.getItem("dark-mode") && setDark();
+
+                function setLight() {
+                  $("#dark-mode").remove();
+                  $("#theme-mode")
+                    .html('<i class="moon icon"></i>暗色')
+                    .attr("onclick", "setDark()");
+                  localStorage.removeItem("dark-mode");
+                }
+
+                function setDark() {
+                  $("<link>").attr({
+                    rel: "stylesheet",
+                    type: "text/css",
+                    href: "/self/dark3.css",
+                    id: "dark-mode",
+                  }).appendTo("head");
+                  $("#theme-mode")
+                    .html('<i class="sun icon"></i>明亮')
+                    .attr("onclick", "setLight()");
+                  localStorage.setItem("dark-mode", "1");
+                }
+              </script>
+
+
+
+<!--
+ <a class="item" href="/lists"><i class="check icon"></i> 题单 </a>
+  <a class="item" href="/labels"><i class="book icon"></i> 标签 </a>
+-->
+  </div>	 
+
+
+
+      <style>
+    .ui.vertical.icon.menu .item .sidebar-item-text {
+      display: none;
+    }
+    .ui.vertical.icon.menu {
+      width: 48.52px;
+      transition: width .15s;
+      /* transition: width .25s; */
+    }
+    .ui.vertical.icon.menu {
+      overflow: hidden;
+    }
+    .ui.vertical.icon.menu.spreaded .item {
+      text-align: left;
+      width: 200px;
+      line-height: 16px;
+    }
+    .ui.vertical.icon.menu.spreaded .item i.icon {
+      display: inline-block;
+      margin-right: 20px;
+      text-align: center;
+      height: 16px;
+      font-size: 16px;
+      width: 16.52px;
+    }
+    .ui.vertical.icon.menu.spreaded .item .sidebar-item-text {
+      display: inline;
+    }
+  </style>
+  <script>
+    $('#sidebar').hover(function() {
+      $(this).css('width', '150px')
+    }, function() {
+      $(this).css('width', '50px')
+    })
+  </script>
+            
+            
+            <div class="right menu">
+              
+              <a href="/user/4890" style="color: inherit; ">
+              <div class="ui simple dropdown item">
+              <p style="margin-bottom:-5px;" >
+              <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=3174969879&amp;s=100 width="30" height="30" >
+                C20250107dengkexin <i style="font-weight:bold;" class="dropdown icon"></i>
+                <div class="menu">
+                <a class="item" href="/user/4890/edit"><i class="edit icon"></i>修改资料</a>
+	          <a class="item" href="/problems/user/4890"><i class="book icon"></i>我的题目</a>
+		  <a class="item" href="/contests_own"><i class="calendar icon"></i>我的比赛</a>
+             	  <a class="item" href="/exercises"><i class="trophy icon"></i>练习</a>
+                <a class="item" href="/forecast"><i class="record icon"></i>跟踪</a>
+                <a class="item" href="/team_my"><i class="users icon"></i>团队</a>
+                <a class="item" href="/teachers/my"><i class="id card icon"></i> 我的老师</a>
+                
+                    <a class="item" href="/teacher/4890"><i class="child icon"></i> 我的学生</a>
+                
+                <a class="item" href="/chat"><i class="chat icon"></i> Chat</a>
+		            <a class="item" href="/discussions_own"><i class="comments icon"></i>我的博客</a>
+                <a class="item" href="/files"><i class="file icon"></i>我的空间</a>
+                <a class="item" href="/people"><i class="users icon"></i> 名人堂</a>
+                <a class="item" href="/notepad"><i class="beer icon"></i> Markdown</a>
+                <a class="item" href="http://61.186.173.89:2019/"><i class="file image icon"></i> 图床</a>
+                <a class="item" href="http://222.180.160.110:6010/"><i class="cloud icon"></i> 我的云盘</a>
+                <a class="item" href="/help"><i class="help circle icon"></i> 帮助</a>
+                  
+                  <a class="item" href-post="/logout?url=%2F"><i class="power icon"></i>注销</a>
+                </div>
+              </div>
+              </a>
+                
+            </div>
+        </div>
+    </div>
+
+  
+    
+    <div style="margin-top: 28px;">
+
+<div class="ui main container">
+
+
+
+<script src="/cdnjs/vue/2.5.21/vue.min.js"></script>
+<link rel="stylesheet" href="./swiper/swiper-bundle.css">  
+<link rel="stylesheet" href="./swiper/swiper-bundle.min.css">    
+<script src="./swiper/swiper-bundle.js"> </script>  
+<script src="./swiper/swiper-bundle.min.js"> </script>
+<script src="./swiper/swiper-bundle.min.js.map"> </script>
+
+<div class="padding">
+　　<div class="red icon message"  style="height:50%; border: none;" ><div class="header"><marquee loop="1000" width="746px"> <b>重庆八中公告：请大家注意发帖规范，严重乱发的封号处理，具体可看高一学长的一些建议 http://222.180.160.110:1024/article/2937 </b></marquee></div></div>
+  <div class="ui three column grid">
+    <div class="eleven wide column">
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+      
+         <div class="swiper-slide" onclick="window.open('http://222.180.160.110:1024/article/6685')"><img src="./banner1.png"></div>
+      
+         <div class="swiper-slide" onclick="window.open('http://222.180.160.110:1024/article/10223')"><img src="./banner2.png"></div>
+      
+         <div class="swiper-slide" onclick="window.open('http://222.180.160.110:1024/article/10105')"><img src="./banner3.png"></div>
+      
+         <div class="swiper-slide" onclick="window.open('http://222.180.160.110:1024/article/9973')"><img src="./banner4.png"></div>
+      
+         <div class="swiper-slide" onclick="window.open('http://222.180.160.110:1024')"><img src=" http://61.186.173.89:2019/2022/10/15/796419518d3fc.png"></div>
+      
+      
+
+
+<!--         <div class="swiper-slide" onclick="window.open('https://www.baidu.com')"><img src="./banner1.png"></div>
+        <div class="swiper-slide" onclick="alert('banner2')"><img src="./banner2.png"></div>
+        <div class="swiper-slide" onclick="alert('banner3')"><img src="./banner3.png"></div>
+        <div class="swiper-slide" onclick="alert('banner4')"><img src="./banner4.png"></div> -->
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    
+    <!-- 如果需要滚动条 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+</div>
+<script>        
+  var mySwiper = new Swiper ('.swiper', {
+    direction: 'horizontal', // 垂直切换选项
+    loop: true, // 循环模式选项
+    // loopAdditionalSlides:3,
+    autoplay:true,
+    preloadImages:false,
+    cssMode:true,
+    // parallax:true,
+    // slidesPerView:2,
+
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+      clickable:true,
+    },
+
+    effect: "slide",
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      hide:true,
+    },
+
+    // on:{
+    //   click:function(){
+    //     alert('你点了Swiper');
+    //   }
+    // }
+
+  })        
+  </script>
+
+
+<!--
+<script>
+  var socket = io.connect('http://222.180.160.110:3000');
+  socket.on('top_notice_content',function(msg){
+    <h4 id="top_notice_content" class="ui attached block header" style="text-align:left;">置顶公告: <span class="user-red">msg</span></h4>
+  }
+-->
+</script>
+  
+<script src="/cdnjs/raphael/2.2.7/raphael.min.js"></script>
+<script src="/cdnjs/morris.js/0.5.1/morris.min.js"></script>
+    <div class="box box-info">
+    <div class="box-header with-border">
+<!--       <h4 class="box-title">模拟赛得分情况</h4> -->
+    </div>
   </div>
-  <div class="main">
-      <h2>标题</h2>
-      <h5>副标题</h5>
-      <div class="fakeimg" style="height:200px;">图像</div>
-      <p>一些文本..</p>
-      <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
-      <br>
-      <h2>标题</h2>
-      <h5>副标题</h5>
-      <div class="fakeimg" style="height:200px;">图像</div>
-      <p>一些文本..</p>
-      <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
+  <div id="score-distribution-chart" style="height: 250px;"></div>
+  <script type="text/javascript">
+  new Morris.Bar({
+    element: 'score-distribution-chart',
+    data: [{"y":2834,"3248":"400","235":"400","3209":"400","3241":"400",},{"y":2843,"235":"7","3248":"7","3241":"7","3209":"6",},{"y":2861,"235":"5","3209":"5","3248":"5","3241":"5","1289":"4","4888":"1","2539":"4",},{"y":2871,"235":"7","3248":"7","3241":"7","3209":"4","143":"1","2559":"1",},{"y":2887,"3248":"6","235":"6","3209":"6","1289":"2","3241":"6","4779":"4",},{"y":2891,"3248":"9","235":"8","3241":"8","3209":"6","2530":"0","4779":"2","1289":"1","4906":"0",},],
+    xkey: 'y',
+    ykeys: ["3248","235","3209","3241","1289","4888","2539","143","2559","4779","2530","4906"],
+    labels: ["3248","235","3209","3241","1289","4888","2539","143","2559","4779","2530","4906"],
+    resize: false
+  });
+  </script>
+
+　　　<h4 class="top attached block header">优质文章 </h4>
+      <div style="height:400px; overflow-y:auto" class="bottom attached segment">
+        <table class="ui very basic table">
+          <thead>
+            <tr>
+              <th>标题</th>
+              <th style="width: 15%; ">时间</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/10574">关于『题解速通指南』：LaTeX 基础</a></td>
+                    <td style="font-weight:bold; ">2022-10-24</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/10554">关于『题解速通指南』：Markdown 语言基础</a></td>
+                    <td style="font-weight:bold; ">2022-10-23</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/10062">2022年9月18日(星期天)CSP-JS第一轮时间节点</a></td>
+                    <td style="font-weight:bold; ">2022-09-17</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/10042">1998~2021普及组真题总览</a></td>
+                    <td style="font-weight:bold; ">2022-09-15</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/9446">Dev_C下载</a></td>
+                    <td style="font-weight:bold; ">2022-07-16</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/7109">【征集 Ynoi 高手】关于 CTS 相关的一些东西。</a></td>
+                    <td style="font-weight:bold; ">2022-02-21</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/6211">「 学习笔记 」二项式定理与组合恒等式</a></td>
+                    <td style="font-weight:bold; ">2021-11-15</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/6120">关于杜教主出的题</a></td>
+                    <td style="font-weight:bold; ">2021-11-09</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/6075">「Q &amp; A」不可食用的问答贴</a></td>
+                    <td style="font-weight:bold; ">2021-11-03</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/5610">2021.09.21比赛题目</a></td>
+                    <td style="font-weight:bold; ">2021-09-20</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/5375">扩展中国剩余定理（主讲取模）</a></td>
+                    <td style="font-weight:bold; ">2021-08-21</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/4796">「CQBZOJ」更新日志</a></td>
+                    <td style="font-weight:bold; ">2021-07-27</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/4545">「杂谈」拉格朗日插值 ☆ 中国剩余定理</a></td>
+                    <td style="font-weight:bold; ">2021-07-13</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/4507">「转置原理的一点瞎研究」</a></td>
+                    <td style="font-weight:bold; ">2021-07-05</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/4118">「论文翻译」斐波那契数列在模 P 意义下的周期</a></td>
+                    <td style="font-weight:bold; ">2021-04-06</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/3430">OI 易犯错误整理</a></td>
+                    <td style="font-weight:bold; ">2021-02-05</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/3413">「杂」浅谈 Möbius 反演与 Walsh–Hadamard 变换之间的有机联系</a></td>
+                    <td style="font-weight:bold; ">2021-02-04</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/2514">三维偏序</a></td>
+                    <td style="font-weight:bold; ">2020-11-17</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/2457">谈谈今天两场CSP的感受与得失</a></td>
+                    <td style="font-weight:bold; ">2020-11-07</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/1782">欧几里得算法</a></td>
+                    <td style="font-weight:bold; ">2020-08-03</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/808">数据结构100题系列目录及前言 当前进度「67/100」</a></td>
+                    <td style="font-weight:bold; ">2019-12-19</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/792">权值SPLAY上手</a></td>
+                    <td style="font-weight:bold; ">2019-12-13</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/750">初探快速傅里叶变换</a></td>
+                    <td style="font-weight:bold; ">2019-12-01</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/670">OJ所有标签</a></td>
+                    <td style="font-weight:bold; ">2019-11-10</td>
+                </tr>
+            
+                <tr>
+                    <td style="font-weight:bold; "><a href="/article/370">标签速查（真）</a></td>
+                    <td style="font-weight:bold; ">2019-08-10</td>
+                </tr>
+            
+          </tbody>
+        </table>
+      </div>  
+
+ <h4 class="top attached block header">有什么新鲜事告诉大家</h4>
+      <div style="height:448px; overflow-y:auto" class="bottom attached segment">
+
+<script>
+    function scrollToId (id) {
+      $('html, body').animate({
+        scrollTop: ($('#' + id).offset().top)
+      }, 500);
+    }
+  </script>
+<div style="text-align: center; margin-bottom: 1rem;">
+
+</div>
+
+<div  class="ui container segment">
+  <form class="ui form" style="margin: 0 0 1em;">
+
+    <div class="field">
+      <textarea rows="2" id="feed-content" name="content" class="markdown-edit"></textarea>
+    </div>
+  </form>
+  <button class="ui red ze button" id="btn-post-feed" tabindex="0">发送至广场</button>
+
+</div>
+
+
+
+<div class="ui ze comments" id="feed" style="max-width: 100%">
+</div>
+<div class="ui container center aligned segment" id="feed-more">
+    <a>点击查看更多...</a>
+  </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    function scrollToId (id) {
+      $('html, body').animate({
+        scrollTop: ($('#' + id).offset().top)
+      }, 500);
+    }
+  </script>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+    $(function(){
+      $feed.html('');
+      $.get("/api/feed/?group_id=" + 'all' + "&page="+feedPage, function(resp) {
+        //alert(resp);
+        $feed.append(resp);
+        if (resp.includes('data-feed-id')) $("#feed-more").children("a").text("点击查看更多...")
+      else $("#feed-more").hide()
+            $("[name=feed-reply]").click(function() {
+        var username = $(this).attr('data-username');
+        $.post("/api/sourceFeed/"+$(this).attr('data-feed-id'), function(resp) {
+          if(resp.status !== 200) {
+                      alert("好像哪里有点问题", resp.data);
+          } else {
+            $("#feed-content").val(" || @" + username + " : " + resp.data);
+          }
+                });
+            })
+           // MathJax.Hub.Queue(['Typeset', MathJax.Hub]); 
+       });
+        feedPage++;
+    });
+  
+
+  var reload = localStorage.reload ? localStorage.reload : false;
+  var reload_speed = localStorage.reload_speed ? localStorage.reload_speed : 10000;
+  var feedPage = 1;
+  var $feed = $("#feed");
+
+  $("#reload").val(reload);
+  $("#reload_speed").val(reload_speed);
+    var socket = io.connect('http://222.180.160.110:3000');
+ 　　
+ 　　$("#btn-post-feed").click(function () {
+    var content = $('#feed-content').val(), e = this;
+      if (content) {
+      socket.emit('message',content + '@'+ "C20250107dengkexin"+'$'+"http://q1.qlogo.cn/g?b=qq&amp;nk=3174969879&amp;s=100");
+      // alert(content);
+      $.post("/api/postFeed", {content: content, group_id: 'all'}, function (resp) { 
+        if(resp.status !== 200) {
+          alert("有可能网络异常", resp.data);
+        } 
+      });
+      content = '';
+      $(e).removeClass("am-disabled");
+      $("#feed-content").val('');
+       //reloadFeed();
+    }
+   });
+
+/*
+<div class="actions"><a name="feed-reply" href="javascript:scrollToId('feed-content')" class="reply" data-username='kkk' data-feed-id='1158' data-user-id="2">回复</a><a name="feed-delete" data-feed-id="1157">删除</a></div>
+*/
+
+
+　　socket.on('message',function(msg){
+    var d = new Date();
+ 　　　//alert(msg);
+    　feedPage = 1;
+    　//$feed.html('');
+    　$("#feed-more").show();
+     // $feed.append(" C20250107dengkexin " + d + ":" + msg + '</br>'); 
+      //$feed-content.val("C20250107dengkexin");
+      var html = '<div class ="ui container segment"><div class="comment"><a class="avatar"><img class="ui avatar image" src=" '+ msg.split('$')[1] +' "></a><div class="content"><span class="author" ><span class="user-name-user-">'+ msg.split('@')[1].split('$')[0] +'</span></a></span><div class="metadata"><span class="date">'+ d +'</span></div><div class="container"><div class = "text"><div style="position:relative; overflow:hidden;"><p>'+ msg.split('@')[0] +'</p></div></div</div></div></div></div>';
+      $feed.prepend(html);
+　　});
+
+
+ 
+
+  function reloadFeed() {
+    feedPage = 1;
+    $feed.html('');
+    $("#feed-more").show();
+    loadFeed();
+  }
+
+    function loadFeed() {
+        $.get("/api/feed/?group_id=" + 'all' + "&page="+feedPage, function(resp) {
+      $feed.append(resp);
+      if (resp.includes('data-feed-id')) $("#feed-more").children("a").text("点击查看更多...")
+      else $("#feed-more").hide()
+            $("[name=feed-delete]").click(function() {
+                $.post("/api/deleteFeed/"+$(this).attr('data-feed-id'), function() {
+                    reloadFeed();
+                })
+            })
+            $("[name=feed-reply]").click(function() {
+        var username = $(this).attr('data-username');
+        $.post("/api/sourceFeed/"+$(this).attr('data-feed-id'), function(resp) {
+          if(resp.status !== 200) {
+                      alert("好像哪里有点问题", resp.data);
+          } else {
+            $("#feed-content").val(" || @" + username + " : " + resp.data);
+          }
+                });
+            })
+//MathJax.Hub.Queue(['Typeset', MathJax.Hub]); 
+       });
+        feedPage++;
+//  MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+
+  }
+
+    $(document).ready(function () {
+        
+        $("#feed-more").click(function() {
+            $(this).children("a").text("加载中...");
+            loadFeed();
+        });
+        /*
+        $("#btn-post-feed").click(function () {
+            $(this).addClass("am-disabled");
+            var content = $('#feed-content').val(), e = this;
+            $.post("/api/postFeed", {content: content, group_id: 'all'}, function (resp) {
+                if(resp.status !== 200) {
+                    alert("好像哪里有点问题", resp.data);
+                } else {
+                    $(e).removeClass("am-disabled");
+          $("#feed-content").val('');
+          reloadFeed();
+                }
+            });
+    });
+    */
+
+
+
+    loadFeed();
+
+    let id;
+    if (reload === 'true') id = setInterval(reloadFeed, reload_speed);
+
+    $("#submit_button").click(function() {
+      if ($("#reload").val() === 'true' && $("#reload_speed").val() < 5000) alert("自动刷新频率至少为 5000")
+      else {
+        localStorage.reload = reload = $("#reload").val(), localStorage.reload_speed = reload_speed = $("#reload_speed").val();
+        clearInterval(id);
+        if (reload === 'true') id = setInterval(reloadFeed, reload_speed);
+        alert("修改成功")
+      }
+        });
+    });
+</script>
+
+            <div class="results" style="width: 100%; "></div>
+      </div>
+
+      <h4 class="top attached block header"></i>排名</h4>
+      <div class="bottom attached segment">
+        <table class="ui very basic center aligned table" style="table-layout: fixed; ">
+          <thead>
+            <tr>
+	            <th style="width: 50px; ">#</th>
+	            <th style="width: 250px; ">用户名</th>
+	            <th>个性签名</th>
+            </tr>
+          </thead>
+          <script data-cfasync="false">
+          var lineHeight = 0;
+          (function () {
+            var div = document.createElement('div');
+            div.style.position = 'fixed';
+            div.style.left = -10000;
+            div.style.visibility = 'hidden';
+            div.innerText = '测试，Test.';
+            document.body.appendChild(div);
+            lineHeight = div.clientHeight;
+          })();
+          </script>
+          <tbody>
+            
+                <tr>
+                    <td style="font-weight:bold;" ><b>1</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=3268797955&amp;s=100 width="45" height="45" ><a href="/user/35">wicton</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-1" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003E事老菜鸟\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-1');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>2</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=647318038&amp;s=100 width="45" height="45" ><a href="/user/199">Kidulthood</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-2" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003ESewwZzzz.....!\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-2');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>3</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://61.186.173.89:2019/2021/08/19/f319c7c8e4f09.jpeg width="45" height="45" ><a href="/user/2071">C2024yuhongxi</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-3" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003EEverything seems emptier and emptier nowadays.\u003C\u002Fp\u003E\n\u003Cbr\u003E\n\u003Cbr\u003E\n\u003Cp\u003ETime is a matter of your live or death.\u003C\u002Fp\u003E\n\u003Cbr\u003E\n\u003Cbr\u003E\n\u003Cp\u003E如果以一个人的做题量评判一个人的实力，那我后悔当初刷了那么多水题。\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-3');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>4</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=1918070524&amp;s=100 width="45" height="45" ><a href="/user/216">STrAduts</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-4" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003E不再追问你为何不能停留 放下了执念微笑现在\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-4');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>5</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=1875104026&amp;s=100 width="45" height="45" ><a href="/user/1743">C2024liuhongyi</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-5" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cbr\u003E\n\u003Cdiv style=\"width:100%; max-height:19px;\"\u003E\u003Cdiv\u003E\u003C\u002Fdiv\u003E\n\u003Cdiv\u003E\n\n\u003Ci class=\"diamond icon\" style=\"color:#92fe9d;\"\u003E\u003C\u002Fi\u003E\n\u003Cstrong\u003E\n\u003Ca\u003E爱是以一种自然的礼物状态，自然来到，它是生灭相续，一执著，爱就死了\u003C\u002Fa\u003E\n\u003C\u002Fstrong\u003E\n\u003Ci class=\"diamond icon\" style=\"color:#00c9ff;\"\u003E\u003C\u002Fi\u003E\u003C\u002Fdiv\u003E\n\n\n\n\n\nfunction myFunction() {\n  var txt;\n  confirm(\"回忆是一座桥，却是通向寂寞的牢，我把所有的伤心走一遍，最伤心的是你不在终点。我把所有的绝望走一遍，最绝望的是你还在起点\")\n}\n\n\ndocument.body.style.backgroundImage=\"linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%)\";\n\n\nclass Circle {\n    constructor({ origin, speed, color, angle, context }) {\n        this.origin = origin\n        this.position = { ...this.origin }\n        this.color = color\n        this.speed = speed\n        this.angle = angle\n        this.context = context\n        this.renderCount = 0\n    }\n\n    draw() {\n        this.context.fillStyle = this.color\n        this.context.beginPath()\n        this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)\n        this.context.fill()\n    }\n\n    move() {\n        this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x\n        this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)\n        this.renderCount++\n    }\n}\n\nclass Boom {\n    constructor({ origin, context, circleCount = 10, area }) {\n        this.origin = origin\n        this.context = context\n        this.circleCount = circleCount\n        this.area = area\n        this.stop = false\n        this.circles = []\n    }\n\n    randomArray(range) {\n        const length = range.length\n        const randomIndex = Math.floor(length * Math.random())\n        return range[randomIndex]\n    }\n\n    randomColor() {\n        const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']\n        return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)\n    }\n\n    randomRange(start, end) {\n        return (end - start) * Math.random() + start\n    }\n\n    init() {\n        for (let i = 0; i  {\n            if (circle.position.x &gt; this.area.width || circle.position.y &gt; this.area.height) {\n                return this.circles.splice(index, 1)\n            }\n            circle.move()\n        })\n        if (this.circles.length == 0) {\n            this.stop = true\n        }\n    }\n\n    draw() {\n        this.circles.forEach(circle =&gt; circle.draw())\n    }\n}\n\nclass CursorSpecialEffects {\n    constructor() {\n        this.computerCanvas = document.createElement('canvas')\n        this.renderCanvas = document.createElement('canvas')\n\n        this.computerContext = this.computerCanvas.getContext('2d')\n        this.renderContext = this.renderCanvas.getContext('2d')\n\n        this.globalWidth = window.innerWidth\n        this.globalHeight = window.innerHeight\n\n        this.booms = []\n        this.running = false\n    }\n\n    handleMouseDown(e) {\n        const boom = new Boom({\n            origin: { x: e.clientX, y: e.clientY },\n            context: this.computerContext,\n            area: {\n                width: this.globalWidth,\n                height: this.globalHeight\n            }\n        })\n        boom.init()\n        this.booms.push(boom)\n        this.running || this.run()\n    }\n\n    handlePageHide() {\n        this.booms = []\n        this.running = false\n    }\n\n    init() {\n        const style = this.renderCanvas.style\n        style.position = 'fixed'\n        style.top = style.left = 0\n        style.zIndex = '999999999999999999999999999999999999999999'\n        style.pointerEvents = 'none'\n\n        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth\n        style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight\n\n        document.body.append(this.renderCanvas)\n\n        window.addEventListener('mousedown', this.handleMouseDown.bind(this))\n        window.addEventListener('pagehide', this.handlePageHide.bind(this))\n    }\n\n    run() {\n        this.running = true\n        if (this.booms.length == 0) {\n            return this.running = false\n        }\n\n        requestAnimationFrame(this.run.bind(this))\n\n        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)\n        this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)\n\n        this.booms.forEach((boom, index) =&gt; {\n            if (boom.stop) {\n                return this.booms.splice(index, 1)\n            }\n            boom.move()\n            boom.draw()\n        })\n        this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)\n    }\n}\n\nconst cursorSpecialEffects = new CursorSpecialEffects()\ncursorSpecialEffects.init()\n\n\n\n\u002F\u002Fwyh防盗专属水印\n\u002F**\n * Copyright (c) 2016 hustcc\n * License: MIT\n * Version: v1.0.1\n * GitHub: https:\u002F\u002Fgithub.com\u002Fhustcc\u002Fcanvas-nest.js\n**\u002F\n!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e(\"script\"),o=t.length,i=t[o-1];return{l:o,z:n(i,\"zIndex\",-1),o:n(i,\"opacity\",.5),c:n(i,\"color\",\"0,0,0\"),n:n(i,\"count\",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x&gt;a||i.xc||i.y&lt;0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e&lt;u.length;e++)n=u[e],null!==n.x&amp;&amp;null!==n.y&amp;&amp;(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l=n.max\u002F2&amp;&amp;(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)\u002Fn.max,r.beginPath(),r.lineWidth=t\u002F2,r.strokeStyle=\"rgba(\"+d.c+\",\"+(t+.2)+\")\",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement(\"canvas\"),d=t(),l=\"c_n\"+d.l,r=m.getContext(\"2d\"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3\u002F45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText=\"position:fixed;top:0;left:0;z-index:\"+d.z+\";opacity:\"+d.o,e(\"body\")[0].appendChild(m),o(),window.onresize=o,window.onmousemove=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n&gt;f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();\n\n\n\n    window.onload = function () {\n        \n        \u002F\u002F禁止F12\n        $(\"*\").keydown(function (e) {\u002F\u002F判断按键\n            e = window.event || e || e.which;\n            if (e.keyCode == 123) {\n                e.keyCode = 0;\n                return false;\n            }\n        });\n        \n        \u002F\u002F禁止审查元素\n        $(document).bind(\"contextmenu\",function(e){\n            return false;\n        });\n    };\n\n\n\u002F\u002F按键触发\ndocument.onkeydown = function(){\n    \u002F\u002F禁止ctrl+u\n    if (event.ctrlKey &amp;&amp; window.event.keyCode==85){\n    return false;\n    }\n    \u002F\u002F禁止 F12\n    if (window.event &amp;&amp; window.event.keyCode == 123) {\n    event.keyCode = 0;\n    event.returnValue = false;\n    }\n    }\n    \u002F\u002F网站禁止右键\n    document.body.oncontextmenu = function() {\n    self.event.returnValue=false\n}; \n\n\n    window.onload = function () {\n        \n        \u002F\u002F禁止F12\n        $(\"*\").keydown(function (e) {\u002F\u002F判断按键\n            e = window.event || e || e.which;\n            if (e.keyCode == 123) {\n                e.keyCode = 0;\n                return false;\n            }\n        });\u002F\u002Fwyh防盗专属水印\n        \n        \u002F\u002F禁止审查元素\n        $(document).bind(\"contextmenu\",function(e){\n            return false;\n        });\n    };\n\n\u002F\u002Fwyh防盗专属水印\n\u002F\u002F按键触发\ndocument.onkeydown = function(){\n    \u002F\u002F禁止ctrl+u\n    if (event.ctrlKey &amp;&amp; window.event.keyCode==85){\n    return false;\n    }\n    \u002F\u002F禁止 F12\n    if (window.event &amp;&amp; window.event.keyCode == 123) {\n    event.keyCode = 0;\n    event.returnValue = false;\n    }\n    }\n    \u002F\u002F网站禁止右键\n    document.body.oncontextmenu = function() {\n    self.event.returnValue=false\n}; \n\n\n\u002F\u002F直接上干货：\nif(document.all){\n    document.onselectstart= function(){return false;}; \u002F\u002Ffor ie\n}else{\n    document.onmousedown= function(){return false;};\n    document.onmouseup= function(){return true;};\n}\ndocument.onselectstart = new Function('event.returnValue=false;');\n \n\u002F\u002F劫持开始选择事件和（或）鼠标按下、抬起事件。\n\n \n    \u002F\u002F禁用右键（防止右键查看源代码） \n    window.oncontextmenu=function(){return false;} \n    \u002F\u002F禁止任何键盘敲击事件（防止F12和shift+ctrl+i调起开发者工具） \n    window.onkeydown = window.onkeyup = window.onkeypress = function () { \n    window.event.returnValue = false; \n        return false; \n    } \n    \u002F\u002F如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面 \n    var h = window.innerHeight,w=window.innerWidth; \n    window.onresize = function () { \n        if (h!= window.innerHeight||w!=window.innerWidth){ \n            window.close(); \n            window.location = \"about:blank\"; \n        } \n    } \n\n \n\u002F\u002F绑定在了body上，也可以绑定在其他可用元素行，但是不是所有元素都支持copy事件。\nif (event.ctrlKey &amp;&amp; window.event.keyCode==67){\n    copy: function(e) {\u002F\u002Fcopy事件\n            let cpTxt = \"复制的数据\";\n            let clipboardData = window.clipboardData; \u002F\u002Ffor IE\n            if (!clipboardData) { \u002F\u002F for chrome\n                clipboardData = e.originalEvent.clipboardData;\n            }\n            let result = clipboardData.getData(\"text\")+\":\"+cpTxt;\n            \u002F\u002Fe.clipboardData.getData('text');\u002F\u002F可以获取用户选中复制的数据\n            clipboardData.setData('Text', result);\n            $('p').text(result);\n            return false;\u002F\u002F否则设不生效\n  }        \n \n\n  fetch('https:\u002F\u002Fv1.hitokoto.cn')\n    .then(response =&gt; response.json())\n    .then(data =&gt; {\n      const hitokoto = document.getElementById('hitokoto_text')\n      hitokoto.href = 'https:\u002F\u002Fhitokoto.cn\u002F?uuid=' + data.uuid\n      hitokoto.innerText = data.hitokoto\n    })\n    .catch(console.error)\n\n\n\u003Cp style=\"color:#00c9ff;\"\u003E\u003Cb\u003E\u003Cs\u003E\u003Csmall\u003E订阅号乱入\u003C\u002Fsmall\u003E\u003C\u002Fs\u003E\u003C\u002Fb\u003E\u003C\u002Fp\u003E\n\n\u003C\u002Fdiv\u003E\n\n\u003Cbr\u003E\n\u003Cb\u003E快读快写\u003C\u002Fb\u003E\n\u003Cdetails\u003E\n\u003Cdiv class=\"ui existing segment\"\u003E\n\u003Cpre style=\"margin-top:0; margin-bottom:0;\"\u003E\u003Cfont color=\"#ff0000\" face=\"微软雅黑 Light\"\u003E\n\u003Ca class=\"copy-button ui button\" style=\"margin-right:0px; border-top-left-radius:0px; border-bottom-right-radius:0px;\"\u003E复制\u003C\u002Fa\u003E\u003Ccode\u003Estatic char ibuf[(1 &lt;&lt; 20) + 1] ,obuf[(1 &lt;&lt; 20) + 1], *iS, *iT, *iP = obuf, out[(1 &lt;&lt; 25) + 1];\n#define getchar() (iS == iT ? iT = (iS = ibuf) + fread(ibuf, 1, (1 &lt;&lt; 20) + 1, stdin), (iS == iT ? EOF : *iS++) : *iS++)\n#define putchar(x) (iP - obuf &lt; 1000000) ? (*iP++ = x) : (fwrite(obuf, iP - obuf, 1, stdout), iP = obuf, *iP++ = x)\ninline void read(int&amp; num) {\n    num = 0;\n    int g = 1;\n    char x = getchar();\n    while (x  '9') {\n    \tg = x == '-' ? -1 : g;\n    \tx = getchar();\n\t}\n    while (x &gt;= '0' &amp;&amp; x &lt;= '9') {\n        num = (num &lt;&lt; 1) + (num &lt;&lt; 3) + (x ^ 48);\n        x = getchar();\n    }\n    num *= g;\n}\nvoid write(int num) {\n\tif (num == 0) putchar('0');\n\tif (num &lt; 0) putchar('-'), num = -num;\n\tint len = 0;\n\twhile (num) out[++len] = num % 10 + 48, num \u002F= 10;\n\twhile (len) putchar(out[len--]);\n}\u003C\u002Fcode\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\u003C\u002Fdetails\u003E\u003C\u002Fdiv\u003E\n\u003Cdiv class=\"ui existing segment\"\u003E\n\u003Cpre style=\"margin-top:0; margin-bottom:0;\"\u003E\u003Cfont color=\"#ff0000\" face=\"微软雅黑 Light\"\u003E\n\u003Ca class=\"copy-button ui button\" style=\"margin-right:0px; border-top-left-radius:0px; border-bottom-right-radius:0px;\"\u003E复制\u003C\u002Fa\u003E\u003Ccode\u003Efwrite(obuf, iP - obuf, 1, stdout);\u003C\u002Fcode\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\n\u003Cdiv class=\"ui existing segment\"\u003E\n\u003Cpre style=\"margin-top:0; margin-bottom:0;\"\u003E\u003Cfont color=\"#ff0000\" face=\"微软雅黑 Light\"\u003E\n\u003Ca class=\"copy-button ui button\" style=\"margin-right:0px; border-top-left-radius:0px; border-bottom-right-radius:0px;\"\u003E复制\u003C\u002Fa\u003E\u003Ccode\u003Eios::sync_with_stdio(false);\u003C\u002Fcode\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\n\n\u003Cbr\u003E\n\u003Cb\u003E乘法逆元\u003C\u002Fb\u003E\n\u003Cdetails\u003E\n\u003Cdiv class=\"ui existing segment\"\u003E\n\u003Cpre style=\"margin-top:0; margin-bottom:0;\"\u003E\u003Cfont color=\"#ff0000\" face=\"微软雅黑 Light\"\u003E\n\u003Ca class=\"copy-button ui button\" style=\"margin-right:0px; border-top-left-radius:0px; border-bottom-right-radius:0px;\"\u003E复制\u003C\u002Fa\u003E\u003Ccode\u003Eint q_pow(int d, int z, int p) {\n\tint res = 1;\n\twhile (z) {\n\t\tif (z &amp; 1) res = (res * d) % p;\n\t\td = (d * d) % p;\n\t\tz &gt;&gt;= 1;\n\t}\n\treturn res;\n}\nint inv(int a, int p) {\n\treturn q_pow(a , p - 2 , p);\n}\u003C\u002Fcode\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\n\u003Cdiv class=\"ui existing segment\"\u003E\n\u003Cpre style=\"margin-top:0; margin-bottom:0;\"\u003E\u003Cfont color=\"#ff0000\" face=\"微软雅黑 Light\"\u003E\n\u003Ca class=\"copy-button ui button\" style=\"margin-right:0px; border-top-left-radius:0px; border-bottom-right-radius:0px;\"\u003E复制\u003C\u002Fa\u003E\u003Ccode\u003Eint exgcd(int a, int b, int&amp; x, int&amp; y) {\n\tif (!b) {\n\t\tx = 1, y = 0;\n\t\treturn a;\n\t}\n\tint g = exgcd(b , a % b, x, y) , t = x;\n\tx = y , y = t - a \u002F b * y;\n\treturn g;\n}\nint inv(int a, int p) {\n\tint x, y;\n\texgcd(a, p, x, y);\n\treturn (x % p + p) % p;\n}\u003C\u002Fcode\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\n\u003Cdiv class=\"ui existing segment\"\u003E\n\u003Cpre style=\"margin-top:0; margin-bottom:0;\"\u003E\u003Cfont color=\"#ff0000\" face=\"微软雅黑 Light\"\u003E\n\u003Ca class=\"copy-button ui button\" style=\"margin-right:0px; border-top-left-radius:0px; border-bottom-right-radius:0px;\"\u003E复制\u003C\u002Fa\u003E\u003Ccode\u003Einv[1] = 1;\nfor (int i = 2; i &lt;= n; i++) {\n\tinv[i] = (p - p \u002F i) * inv[p % i] % p;\n}\u003C\u002Fcode\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\n\u003C\u002Fdetails\u003E\n\u003Cbr\u003E\n\u003Cb\u003ESome useful websites\u003C\u002Fb\u003E\n\u003Cdetails\u003E\n\u003Ca class=\"ui violet label\" href=\"https:\u002F\u002Ftools.kalvinbg.cn\u002Ftxt\u002Fslag\"\u003E 黄炜淇语录生成器 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui red label\" href=\"http:\u002F\u002F222.180.160.110:1024\u002Ffile\u002Fdownload-share\u002F4270b0d7f8507400b14c4fa33a0a07be65eaa959d312d5f1094d3ee6b2c415f533fc21fd163c221f2942904d9945180dce883943a5a74a2e2f2aa256973fae52b2a563b61c82f2eb0626525e838cf3d264cf5df57cf081308515259e6188c22210016fa45601528a0416ce102efa35be2b5b7221bf4f7396caf201a019ccaa17d08201d0dc2d\"\u003E 360安全卫士 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui green label\" href=\"https:\u002F\u002Flinshiyou.com\u002F\"\u003E 临时邮箱 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui red label\" href=\"https:\u002F\u002Fwww.bejson.com\u002Fconvert\u002Fhtml2markdown\u002F\"\u003E Markdown和HTML转换器 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui yellow label\" href=\"https:\u002F\u002Fcsacademy.com\u002F\"\u003E 图论神器 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui orange label\" href=\"https:\u002F\u002Fmivik.gitee.io\u002Fcompress\"\u003E C++压行器 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui pink label\" href=\"http:\u002F\u002Fweavesilk.com\u002F\"\u003E 唯美画图 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui blue label\" href=\"http:\u002F\u002Fwww.atoolbox.net\u002F\"\u003E 趣味百宝箱1 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui red label\" href=\"https:\u002F\u002Fsmart-luogu.github.io\u002Fhelp.html\"\u003E 洛谷美化 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui teal label\" href=\"https:\u002F\u002Ftools.kalvinbg.cn\u002F\"\u003E 趣味百宝箱2 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui green label\" href=\"https:\u002F\u002Fpaper-io.com\u002Fconflict\u002F\"\u003E 奇妙的东西 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui pink label\" href=\"http:\u002F\u002F222.180.160.110:1024\u002Ffile\u002Fdownload-share\u002Ffa3bda1068c62aec337a0266815bdd6f8d5c00780bfce6a1f0e0b44b0eb873fd6e75ee02d5ec9a1d4ee69a9dbe19b975ea0dfd1458cf1e7103ea6cbd\"\u003E QQ音乐 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui violet label\" href=\"https:\u002F\u002Fwww.51shucheng.net\u002Fqingchun\u002Ftiancaijibenfa\"\u003E 天才基本法 \u003C\u002Fa\u003E\n\u003Cbr\u003E\n\u003Ca class=\"ui teal label\" href=\"http:\u002F\u002F222.180.160.110:1024\u002Ffile\u002Fdownload-share\u002F88b4b6fb554428268f72fbe8eecfa089c01660a3768e5c593ebe001ed5383f4a982c2ddaa4db58f873e2e15a9d538514b47d48428941419bb3fb279101283c1b\"\u003E 金山打字通 \u003C\u002Fa\u003E\n\u003C\u002Fdetails\u003E\n\u003Cbr\u003E\n\u003Cb\u003ESome Chicken Soup for the Soul\u003C\u002Fb\u003E\n\u003Cdetails\u003E\n\u003Cfont color=\"#FF66FF\" face=\"楷体\"\u003E\n一个人的心是一只旅鼠，它陪他坐在雨中，淋湿了却在跳动，他们面面相对，直到失声痛哭\n\u003C\u002Ffont\u003E\n\u003Cbr\u003E\n\u003Cbr\u003E\n\u003Cfont color=\"##00009C\" face=\"楷体\"\u003E\n懦怯囚禁人的灵魂，希望可以令你感受自由。强者自救，圣者渡人\n\u003Cbr\u003E\n\u003Cbr\u003E\n一万个美丽的未来，抵不上一个温暖的现在;每一个真实的现在，都是我们曾经幻想的未来，愿你爱上现在，梦见未来 \n\u003Cbr\u003E\n\u003Cbr\u003E\n把体重留给爱的美食，把眼睛留给好风光，把等待留给一直寻觅的真心，把欢喜留给一次次突破障碍的勇敢，把拥抱留给永远不会离开的自己\n\u003Cbr\u003E\n\u003Cbr\u003E\n人生苦短，不要把时间浪费在犹豫不决上，喜欢的东西就去买，喜欢的人就去追，不然你怎么知道你买不起又追不到 \n\u003Cbr\u003E\n\u003Cbr\u003E\n在这个世界上，没有一劳永逸、完美无缺的选择。你不可能同时拥有春花和秋月，不可能同时拥有硕果和繁花。不可能所有的好处都是你的。你要学会权衡利弊，学会放弃一些什么，然后才可能得到些什么。你要学会接受命的残缺和悲哀，然后，心平气和。因为，这就是人生\n\u003Cbr\u003E\n\u003Cbr\u003E\n总有起风的清晨，总有暖和的午后，总有绚烂的黄昏，总有流星的夜晚。所以，保持顺其自然的心境，把握每一个瞬间，试着去做，去面对每一个昨天，今天和明天 \n\u003Cbr\u003E\n\u003Cbr\u003E\n只有真正爱你的人，才会对你的处境感同身受。更多的人，只是把你的伤痛当谈资笑料而已 \n\u003Cbr\u003E\n\u003Cbr\u003E\n情，不能陷得太深，深了难以自拔；利，不能看得太重，重了难以明志；人，不能做得太假，假了难以交心；世，不能看得太清，清了难以作为 \n\u003Cbr\u003E\n\u003Cbr\u003E\n有的时候，老天爷让你结束一段关系并不是没收你的幸福，而是老天爷一直将你的不快乐看在眼里，连老天都心疼你，觉得她不配，所以放你走\n\u003Cbr\u003E\n\u003Cbr\u003E\n坚持就是，虽然我还小，虽然我对很多东西的看法不一定正确，但我有我想做的事情，它可能不重要也可能微不足道，但我就是要继续做下去 ——林朝夕 \n\u003Cbr\u003E\n\u003Cbr\u003E\n可添加： \n\u003Cbr\u003E\n\u003Cbr\u003E\n可添加： \n\u003Cbr\u003E\n\u003Cbr\u003E\n可添加： \n\u003Cbr\u003E\n\u003Cbr\u003E\n\u003C\u002Ffont\u003E\n\u003C\u002Fdetails\u003E\n\u003Cbr\u003E\n\u003Cb\u003ESome pretty pictures\u003C\u002Fb\u003E\n\u003Cdetails\u003E\n\u003Cp\u003E\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fcc208f6a60892.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F022aabf2e369d.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fa4314b9ab657b.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fa08eb9687109d.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F9510fe872ab6a.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fc229ec87ab94c.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F20048f16773d1.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F68330a2705af6.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F972cc33af2f16.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F74ef5b973463d.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fef222516a9369.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F2be9fbf8a2b88.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F4d403efb22eb5.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fedf85d5ab42b0.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F0dfb71aed4cc3.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F69ea30e70a54d.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F866e0c67da5e9.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F6f80f2763fc97.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F8bd616e28b87a.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F1ed8001ad6338.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002Fba26cc175d74c.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F31179e5032651.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F885be07459aa6.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002Fe59ba7676880c.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F39ba927a02b51.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F69da1bec60c33.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F751d883fbc458.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002Fc34cd98d25d59.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002Fba883762fa7e1.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F85fdfe2bb94d8.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F28\u002F9651d9d3e964e.jpg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F7c5c6b0b43437.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fcbd993b50f5d1.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F3b4b905ca3e0a.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F19\u002F5cfeb65a36503.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F19\u002F0e1773dde9577.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F19\u002Ff3b8127ba7375.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Ff4e77f7d289ff.g\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F20\u002Fc9428a65d016e.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F20\u002Ff4d9ce2a4f260.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fab8ff0fb53da3.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F5e79d10804483.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fdebb62ff7feba.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F2290f7302baea.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F1e831d841168e.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F3e3744927a8c4.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fa06ab982353ad.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fd6bbfb6a238d4.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F0ae013a51c57c.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F65f7d84269616.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fff9bf0e53ffab.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fddfd118f480f6.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F68d12db9b467f.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002Fbcd0426473de7.jpeg\"\u003E\n\u003Cimg alt=\"\" src=\"http:\u002F\u002F61.186.173.89:2019\u002F2022\u002F08\u002F18\u002F95aa26858e8b3.jpeg\"\u003E\u003C\u002Fp\u003E\n\u003C\u002Fdetails\u003E\n\n$(document).ready(function (){\n\t$(\"pre\").prepend(\"\u003Ca class=\"\\&quot;copy-button\"\u003E复制\u003C\u002Fa\u003E\");\n\t$(\".copy-button\").click(function() {\n\t\tvar element = $(this).siblings(\"code\");\n\t\tvar text = $(element).text();\n\t\tvar $temp = $(\"\");\n\t\t$(\"body\").append($temp);\n\t\t$temp.val(text).select();\n\t\tdocument.execCommand(\"copy\");\n\t\t$temp.remove();\n\t\t$(this).text(\"复制成功\");\n\t\tvar e = this;\n\t\tsetTimeout(function() {\n\t\t\t$(e).text(\"复制\");\n\t\t}, 500);\n\t});\n        $(\".copy-button\").css({\n            position: 'absolute',\n            right: '0',\n            top: '0',\n            marginRight: '0',\n            borderTopLeftRadius: '0',\n            borderBottomRightRadius: '0'\n        });\n});\n";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-5');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>6</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=1729229821&amp;s=100 width="45" height="45" ><a href="/user/153">TIANWEN</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-6" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003E思维，思维，思维。\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fcsacademy.com\u002Fapp\u002Fgraph_editor\u002F\"\u003Ehttps:\u002F\u002Fcsacademy.com\u002Fapp\u002Fgraph_editor\u002F\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cp\u003Eg++ -v\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002F192.168.15.14:8888\u002F\"\u003Ehttp:\u002F\u002F192.168.15.14:8888\u002F\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cp\u003Evis2025\u003C\u002Fp\u003E\n\u003Cp\u003Epw261299\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fiw233.cn\u002FAPI\u002FRandom.php\"\u003Ehttps:\u002F\u002Fiw233.cn\u002FAPI\u002FRandom.php\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fwww.zhixue.com\u002Flogin.html\"\u003Ehttps:\u002F\u002Fwww.zhixue.com\u002Flogin.html\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002F47.92.197.167:5283\u002F\"\u003Ehttp:\u002F\u002F47.92.197.167:5283\u002F\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002Firidescent41.cf\"\u003Eiridescent41.cf\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-6');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>7</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=2380004583&amp;s=100 width="45" height="45" ><a href="/user/335">kid_magic</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-7" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003E第二天叫醒我的不是闹钟，是XSH！\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-7');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>8</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=1298203718&amp;s=100 width="45" height="45" ><a href="/user/1">lifan</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-8" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003E人有多大胆，地有多大产\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-8');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>9</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=1262215607&amp;s=100 width="45" height="45" ><a href="/user/152">C2022dongjie</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-9" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Cp\u003E\u003Ca class=\"sb_amazeui\" target=\"_blank\" href=\"\"\u003E\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-9');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td style="font-weight:bold;" ><b>10</b></td>
+                    <td style="font-weight:bold;" class="left aligned" >
+     <p style="margin-bottom:-5px;" >
+     <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=1004986425&amp;s=100 width="45" height="45" ><a href="/user/678">C202302juyuhong</a></td>
+                    <td  style="font-content; font-weight:bold;">
+                      <script id="user-infomation-script-10" data-cfasync="false">
+                      (function () {
+                        var html = "\u003Cdiv style=\"position: relative; overflow: hidden; \"\u003E\u003Ca href=\"https:\u002F\u002Fwww.cnblogs.com\u002Fcqbzjyh\u002F\"\u003E\n\u003Cstrong\u003E\n\u003Cfont color=\"#B0E0E6\"\u003E我\u003C\u002Ffont\u003E \n\u003Cfont color=\"#87CEEB\"\u003E的\u003C\u002Ffont\u003E \n\u003Cfont color=\"#87CEEB\"\u003E博\u003C\u002Ffont\u003E \n\u003Cfont color=\"#40E0D0\"\u003E客\u003C\u002Ffont\u003E\n\u003C\u002Fstrong\u003E\n\u003C\u002Fa\u003E\n\u003Cdetails\u003E\n\u003Cp\u003E&lt;!doctype html&gt;\u003C\u002Fp\u003E\n\n\n\n\n\n\u003Cdiv class=\"ui existing segment\"\u003E\u003Cpre style=\"margin-top: 0; margin-bottom: 0; \"\u003E\u003Ccode class=\"language-cpp\"\u003E#include &lt;bits\u002Fstdc++.h&gt;\nusing namespace std;\nchar c;\nint main() {\n    while (scanf(\"%c\", &amp;c) != EOF) printf(\"%c\", c);\n    return 0;\n}\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\u003C\u002Fdiv\u003E\n\u003Cp\u003E&nbsp;\u003C\u002Fp\u003E\n\n\n\u003C\u002Fdetails\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fpoem.rotriw.com\u002F\"\u003Ehttps:\u002F\u002Fpoem.rotriw.com\u002F\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E";
+                        var elem = document.createElement('div');
+                        elem.style = 'overflow: hidden; width: 100%; position: relative; ';
+                        elem.style.maxHeight = lineHeight + 'px';
+                        elem.innerHTML = html;
+                        var imgs = Array.prototype.slice.call(elem.getElementsByTagName('img'));
+                        for (var i in imgs) imgs[i].parentNode.removeChild(imgs[i]);
+                        var script = document.getElementById('user-infomation-script-10');
+                        script.parentNode.replaceChild(elem, script);
+                      })();
+                      </script>
+                    </td>
+                </tr>
+             
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    
+    <div class="right floated five wide column">
+        
+        <h4 class="top attached block header"><i class="ui magic icon"></i>今日运势</h4>
+        <div class="bottom attached segment">
+            <div style="height: 15px; border: none;"></div>
+            <div style="font-weight:bold; border: none;" class="ui two column center aligned padded grid">
+                <div class="one column row">
+                    <div style="text-align: center; border: none; ">
+                        <div style="color: #f25e65; font-size: 49px;">♂ 小凶 <span style="transform: scaleX(-1); display: inline-block; ">♂</span></div>
+                    </div>
+                </div>
+                <div class="two column row">
+                    <div class="column">
+                        <div style="color: #0ccf00; ">
+                            
+                            <strong>宜：</strong>装弱
+                            <br>
+                            <span style="color: #888; font-size: 0.7em; ">我好菜啊</span>
+                            <div style="margin-top: 10px; "></div>
+                            <strong>宜：</strong>刷题
+                            <br>
+                            <span style="color: #888; font-size: 0.7em; ">一遍过样例</span>
+                            
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div style="color: #f25e65; ">
+                            
+                            <strong>忌：</strong>参加模拟赛
+                            <br>
+                            <span style="color: #888; font-size: 0.7em; ">爆零</span>
+                            <div style="margin-top: 10px; "></div>
+                            <strong>忌：</strong>学数论
+                            <br>
+                            <span style="color: #888; font-size: 0.7em; ">咋看都不会</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+      <h4 class="top attached block header"><span><i class="icon clock"></i>距离<span class="status wrong_answer">NOIP2022</span>还有</h4></span>
+          <div style="height:168px;display:flex;justify-content: center;"; class="bottom attached center segment">
+                <style>
+                    .gcs-radius{
+                        width: 140px;
+                        height: 140px;
+                        line-height: 115px;
+                        background: white;
+                        text-decoration: none;
+                        color:green;
+                        border-radius: 70px;
+                        text-align: center;
+                        display: inline-block;
+                        font-size:40px;
+                        font-weight: 800;
+                        border:10px solid lightgrey;
+                    }
+                </style>
+              <div class="gcs-radius">17天</div>
+          </div>
+        
+    <div class="box box-info">
+    <div class="ui box-header with-border">
+<!--       <h4 class="box-title">模拟赛得分情况</h4> -->
+    </div>
+  </div>
+        <h4 class="top attached block header"><i class="ui quote left icon"></i>一言（ヒトコト）</h4>
+        <div style="font-weight:bold; " class="bottom attached center aligned segment">
+          <div class="ui active centered inline loader" id="hitokoto-loader"></div>
+          <script>
+          $.get('https://v1.hitokoto.cn/?c=a', function (data) {
+            if (typeof data === 'string') data = JSON.parse(data);
+            $('#hitokoto-loader').removeClass('active');
+            $('#hitokoto-content').css('display', '').text(data.hitokoto);
+            if (data.from) {
+              $('#hitokoto-from').css('display', '').text('——' + data.from);
+            }
+          });
+          </script>
+          <div style="font-size: 1em; line-height: 1.5em; display: none; " id="hitokoto-content"></div>
+          <div style="text-align: right; margin-top: 15px; font-size: 0.9em; color: #666; display: none; " id="hitokoto-from"></div>
+        </div>
+      <h4 class="top attached block header"><i class="ui search icon"></i>搜索题目</h4>
+      <div class="bottom attached segment">
+        <form action="/problems/search" method="get">
+          <div class="ui search" style="width: 100%; ">
+            <div class="ui left icon input" style="width: 100%; ">
+              <input class="prompt" style="width: 100%; " type="text" placeholder="ID / 题目名 / 题目描述…" name="keyword">
+              <i class="search icon"></i>
+            </div>
+            <div class="results" style="width: 100%; "></div>
+          </div>
+        </form>
+        <div style="text-align: center; margin-top: 10px; width: 100%;">
+          <a class="ui green labeled icon regular button" href-post="/problem-rand"><i class="icon smile"></i>随机一题</a>
+        </div>
+      </div>
+
+
+
+
+
+     
+ 
+      <h4 class="top attached block header"><i class="ui tasks icon"></i>错题集</h4>
+      <div style="height:100px; overflow-y:auto" class="bottom attached segment">
+          <div class="todo_list">
+              
+              
+                <div style="text-align: center;">列表为空</div>
+              
+          </div>
+      </div>
+      <style type="text/css">
+        .todo_list {
+          margin-left: .125em;
+          margin-right: .125em;
+        }
+        .todo_list_item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .todo_list_item:not(:first-child) {
+          margin-top: .75em;
+        }
+        .todo_list_item div:nth-child(2) {
+          margin-left: .5em;
+          margin-right: .5em;
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+        .button_todo_list_remove i {
+          margin: 0 !important;
+          color: #666;
+          transition: linear color 0.15s 0s;
+        }
+        .button_todo_list_remove:hover i.check.icon {
+          color: #21aa45;
+        }
+        .button_todo_list_remove:hover i.remove.icon {
+          color: #db2828;
+        }
+      </style>
+      <script type="text/javascript">
+        $('.todo_list').on('click', '.button_todo_list_remove', function() {
+          var $item = $(this).parents('.todo_list_item');
+          var problem_id = $item.attr('data-problem');
+          $.ajax({
+            method: 'POST',
+            url: '/api/todo_list/remove/' + problem_id,
+            success: function(data) {
+              if (data.error) {
+                alert(data.error);
+              } else {
+                $item.transition('fade left', {
+                  onComplete: function() {
+                    $item.remove();
+                    if (!$('.todo_list_item').length) {
+                      $('.todo_list').append(
+                        $('<div>').css('text-align', 'center')
+                          .text('列表为空')
+                      );
+                    }
+                  }
+                });
+              }
+            },
+            error: function(xhr) {
+              alert(xhr.responseText);
+            }
+          });
+        });
+        $(function() {
+          $('.button_todo_list_remove').popup({
+            position: 'top center'
+          });
+        });
+      </script>
+      
+
+      <h4 class="top attached block header"><i class="ui rss icon"></i>最近更新</h4>
+      <div style="height:500px; overflow-y:auto" class="bottom attached segment">
+	<table class="very basic center aligned table">
+          <thead>
+            <tr>
+              <th>题目名称</th>
+              <th>更新时间</th>
+            </tr>
+	  </thead>
+	  <tbody>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47650">「2022 CSP-J  T4」上升点列</a></td>
+	      <td style="font-weight:bold; ">8 小时前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47649">「2022 CSP-J  T3」逻辑表达式</a></td>
+	      <td style="font-weight:bold; ">8 小时前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47648">「2022 CSP-J  T2」解密</a></td>
+	      <td style="font-weight:bold; ">8 小时前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47647">「2022 CSP-J  T1」乘方</a></td>
+	      <td style="font-weight:bold; ">8 小时前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47654">「2022 CSP-S  T4」数据传输</a></td>
+	      <td style="font-weight:bold; ">1 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47653">「2022 CSP-S  T3」星战</a></td>
+	      <td style="font-weight:bold; ">1 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47652">「2022 CSP-S  T2」策略游戏</a></td>
+	      <td style="font-weight:bold; ">1 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47651">「2022 CSP-S  T1」假期计划</a></td>
+	      <td style="font-weight:bold; ">1 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47644">victorique</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47625">danterean</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47623">mysoulyourbeats</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47624">rtcptcnbr</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/43795">卡片</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/15024">「BZOJ1024」生日快乐</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/25725">自由世界(2020牛客普及组第六场T4)</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/25724">小球下落(2020牛客普及组第六场T3)</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/25723">平面旅行(2020牛客普及组第六场T2)</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/25722">七七七七(2020牛客普及组第六场T1)</a></td>
+	      <td style="font-weight:bold; ">2 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/19643">分组背包</a></td>
+	      <td style="font-weight:bold; ">3 周前</td>
+	    </tr>
+	    
+	    <tr>
+	      <td style="font-weight:bold; "><a href="/problem/47612">「WC2021」 斐波那契</a></td>
+	      <td style="font-weight:bold; ">3 周前</td>
+	    </tr>
+	    
+	  </tbody>
+	</table>
+      </div>
+
+      <h4 class="top attached block header"><i class="calendar icon"></i>近期比赛</h4>
+      <div style="height:630px; overflow-y:auto" class="bottom attached  segment">
+        
+        <table class="very basic center aligned table">
+          <thead>
+            <tr>
+              <th>比赛名称</th>
+              <th>开始时间</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3033">2022CSP-J/S官方数据补题 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-08 12:20:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3031">【初2023级】莫队算法1 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-07 15:58:12</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3018">初二周末新知【莫队】 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-07 11:20:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3010">初二最大子段和强化练习 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-07 11:11:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3025">数据谷初二梯队训练 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-04 18:30:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3022">高一二队贪心练习 <span class="ui header"><div class="ui mini grey label">已结束</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-03 16:13:46</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/3011">【初2025级小班】表达式求值相关 <span class="ui header"><div class="ui mini grey label">已结束</div></span></a></td>
+              <td style="font-weight:bold; ">2022-11-01 17:01:55</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2992">初二CSP适应性训练 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-27 16:17:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2985">初二上第八周中午二分专训 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-27 16:16:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2988">初二社团搜索定时测试 <span class="ui header"><div class="ui mini grey label">已结束</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-25 16:15:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2990">初三NOIP模拟赛Round4补题 <span class="ui header"><div class="ui mini grey label">已结束</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-25 14:17:12</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2987">初三NOIP模拟赛4 <span class="ui header"><div class="ui mini grey label">已结束</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-24 14:33:51</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2974">初二周末复习-数据结构专训 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-24 11:00:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2966">渝北校区初二DP专训 <span class="ui header"><div class="ui mini green label">进行中</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-24 7:30:00</td>
+            </tr>
+            
+            <tr>
+              
+                
+              
+              <td style="font-weight:bold; "><a href="/contest/2981">初三NOIP模拟赛Round3补题 <span class="ui header"><div class="ui mini grey label">已结束</div></span></a></td>
+              <td style="font-weight:bold; ">2022-10-22 14:37:28</td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+      
+      <h4 class="top attached block header font-content"><i class="ui linkify icon"></i>友情链接</h4>
+      <div style="font-weight:bold; height:185px; overflow-y:auto" class="bottom attached segment">
+        <ul style="margin: 0; padding-left: 20px; ">
+          
+            <li ><a href="https://www.cnblogs.com/crashed">李雷</a></li>
+          
+            <li ><a href="https://www.cnblogs.com/Reanap">王尧</a></li>
+          
+            <li ><a href="https://www.cnblogs.com/rainybunny/">汪煦康</a></li>
+          
+            <li ><a href="https://www.cnblogs.com/chihik/">徐浩然</a></li>
+          
+        </ul>
+      </div>
+      
+
+ 　　
+
+    </div>
   </div>
 </div>
- 
-<div class="footer">
-  <h2>我们是星汉与远洋</h2>
+<script>
+$(function () {
+  $('.ui.search').search({
+    debug: true,
+    apiSettings: {
+      url: '/api/v2/search/problems/{query}',
+      cache: false
+    },
+    fields: {
+      title: 'name'
+    }
+  });
+});
+</script>
+
+<style type="text/css">
+  .side_bar .ui.block.header i.icon {
+    font-size: 1em;
+    vertical-align: initial;
+  }
+</style>
+
+<script type="text/javascript">
+  (function() {
+    const storageKey = 'syzoj_sidebar';
+    var $sidebar = $('.side_bar');
+    var $headers = $sidebar.find(".ui.top.attached.block.header");
+    var config = null;
+    // load the config
+    try {
+      config = JSON.parse(localStorage.getItem(storageKey));
+      if (!config || typeof config !== 'object') config = {};
+    } catch (err) {
+      config = {};
+    }
+    function saveConfig() {
+      localStorage.setItem(storageKey, JSON.stringify(config));
+    }
+    // apply saved config and register events
+    $headers.each(function(i, header) {
+      var $header = $(header);
+      var $segment = $header.next(".ui.bottom.attached.segment");
+      var name = $header.text().trim();
+      var hidden = false;
+      $header.css('cursor', 'pointer');
+      if (name in config) {
+        if (config[name] === "hide") {
+          $header.removeClass("top attached");
+          $segment.hide();
+          hidden = true;
+        }
+      } else {
+        config[name] = "show";
+      }
+      $header.click(function() {
+        if (hidden) {
+          $segment.queue(function(next) {
+            $header.addClass("top attached");
+            next();
+          }).slideDown();
+        } else {
+          $segment.slideUp(function() {
+            $header.removeClass("top attached");
+          });
+        }
+        hidden = !hidden;
+        config[name] = hidden ? "hide" : "show";
+        saveConfig();
+      });
+    });
+    saveConfig();
+  })();
+</script>
+
+
 </div>
+    <div class="ui vertical footer segment" style="margin-top: 15px; ">
+      <div class="ui center aligned container">
+        <span style="color: #999;">重庆八中OJ Powered by <a href="https://github.com/syzoj/syzoj" target="_blank">SYZOJ</a></span>
+      </div>
+      <div class="ui center aligned container">
+        <span style="color: #999;">　DIY by LF lifan19930501@163.com　</span>
+      </div>
+    </div>
+</div>
+<script data-cfasync="false" src="/cdnjs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="/cdnjs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+<script src="/self/script.js?20170710"></script>
+</body>
+</html>
+
