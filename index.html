@@ -8,9 +8,7 @@
 <link rel="bookmark" href="/static/favicon.ico" type="image/x-icon"　/>
 <head>
     <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=1200">
-    <title>首页-星汉与远洋</title>
+    <title>星汉与远洋-首页</title>
     <link href="/cdnjs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
     <link href="/self/tomorrow.css" rel="stylesheet">
     <link href="/self/math.css" rel="stylesheet">
@@ -59,31 +57,8 @@
  
               　　　　　<a style="font-weight:bold;"  class="item" href="/calendar"><i class="calendar alternate icon"></i>暂无</a>
  
-      <a style="font-weight:bold;" class="item" id="theme-mode" onclick="setDark()"><i class="moon icon"></i></a>
-              <script>
-                localStorage.getItem("dark-mode") && setDark();
-
-                function setLight() {
-                  $("#dark-mode").remove();
-                  $("#theme-mode")
-                    .html('<i class="moon icon"></i>暗色')
-                    .attr("onclick", "setDark()");
-                  localStorage.removeItem("dark-mode");
-                }
-
-                function setDark() {
-                  $("<link>").attr({
-                    rel: "stylesheet",
-                    type: "text/css",
-                    href: "/self/dark3.css",
-                    id: "dark-mode",
-                  }).appendTo("head");
-                  $("#theme-mode")
-                    .html('<i class="sun icon"></i>明亮')
-                    .attr("onclick", "setLight()");
-                  localStorage.setItem("dark-mode", "1");
-                }
-              </script>
+     
+               
 
 
 
@@ -134,8 +109,6 @@
             
             
             <div class="right menu">
-              
-              <a href="/user/4890" style="color: inherit; ">
               <div class="ui simple dropdown item">
               <p style="margin-bottom:-5px;" >
               <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src=http://q1.qlogo.cn/g?b=qq&amp;nk=3174969879&amp;s=100 width="30" height="30" >
