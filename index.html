@@ -1,109 +1,225 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="zh-Hans-CN">
- 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <div class="red icon message"  style="height:50%; border: none;" ><div class="header"><marquee loop="1000" width="746px"> <b> 星汉与远洋欢迎您! </b></marquee></div></div>
-<?xml version="1.0" encoding="UTF-8"?>
-
-  <title>星汉与远洋-首页</title>
- 
- <canvas id="canvas" width="120" height="40"></canvas>
-<input type="text" id="text">
-<input type="button" value="提交" id="bt">
-<script>
-    var canvas = document.getElementById("canvas");//演员
-    var context = canvas.getContext("2d");//舞台，getContext() 方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
-    var button = document.getElementById("bt");//获取按钮
-    var input = document.getElementById("text");//获取输入框
-    draw();
-    canvas.onclick = function () {
-        context.clearRect(0, 0, 120, 40);//在给定的矩形内清除指定的像素
-        draw();
-    }
-    // 随机颜色函数
-    function getColor() {
-        var r = Math.floor(Math.random() * 256);
-        var g = Math.floor(Math.random() * 256);
-        var b = Math.floor(Math.random() * 256);
-        return "rgb(" + r + "," + g + "," + b + ")";
-    }
-    function draw() {
-        context.strokeRect(0, 0, 120, 40);//绘制矩形（无填充）
-        var aCode = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f","s","x"];
-        // 绘制字母
-        var arr = [] //定义一个数组用来接收产生的随机数
-        var num //定义容器接收验证码
-        for (var i = 0; i < 4; i++) {
-            var x = 20 + i * 20;//每个字母之间间隔20
-            var y = 20 + 10 * Math.random();//y轴方向位置为20-30随机
-            var index = Math.floor(Math.random() * aCode.length);//随机索引值
-            var txt = aCode[index];
-            context.font = "bold 20px 微软雅黑";//设置或返回文本内容的当前字体属性
-            context.fillStyle=getColor();//设置或返回用于填充绘画的颜色、渐变或模式，随机
-            context.translate(x,y);//重新映射画布上的 (0,0) 位置，字母不可以旋转移动，所以移动容器
-            var deg=90*Math.random()*Math.PI/180;//0-90度随机旋转
-            context.rotate(deg);// 	旋转当前绘图
-            context.fillText(txt, 0, 0);//在画布上绘制“被填充的”文本
-            context.rotate(-deg);//将画布旋转回初始状态
-            context.translate(-x,-y);//将画布移动回初始状态
-            arr[i] = txt //接收产生的随机数
-        }
-        num = arr[0] + arr[1] + arr[2] + arr[3] //将产生的验证码放入num
-        // 绘制干扰线条
-        for (var i = 0; i < 8; i++) {
-            context.beginPath();//起始一条路径，或重置当前路径
-            context.moveTo(Math.random() * 120, Math.random() * 40);//把路径移动到画布中的随机点，不创建线条
-            context.lineTo(Math.random() * 120, Math.random() * 40);//添加一个新点，然后在画布中创建从该点到最后指定点的线条
-            context.strokeStyle=getColor();//随机线条颜色
-            context.stroke();// 	绘制已定义的路径
-        }
-        // 绘制干扰点，和上述步骤一样，此处用长度为1的线代替点
-        for (var i = 0; i < 20; i++) {
-            context.beginPath();
-            var x = Math.random() * 120;
-            var y = Math.random() * 40;
-            context.moveTo(x, y);
-            context.lineTo(x + 1, y + 1);
-            context.strokeStyle=getColor();
-            context.stroke();
-        }
-
-        //点击按钮验证
-        button.onclick = function () {
-            var text = input.value //获取输入框的值
-            if (text === num) {
-                alert('验证通过,欢迎您!')
-            } else {
-                alert('验证失败,请重新输入')
-            }
-        }
-
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>90's Cursor Effects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JavaScript mouse effects that follow your cursor or finger!"
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐭</text></svg>">
 
 
-</script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./dist/browser.js"> </script>
+  </head>
+  <body>
+    <header><h1>90's Cursor Effects</h1></header>
 
-</head>
- 
- 
-<body>
- <br/>
-<a href="https://saf-d.github.io/saf1/">首页</a>
-<br/>
-<a href="https://saf123.mysxl.cn/" target="_blank">星汉与远洋-官网</a>
- <br/>
-<a href="https://saf-d.github.io/saf-D/" target="_blank">星汉与远洋-公告与下载</a>
-  <br/>
-<a href="https://saf-d.github.io/saf2/" target="_blank">星汉与远洋-待开发</a>
-</body>
- 
+    <div class="wrapper">
+      I'd like to take the web back a little bit, into the wonderful days where
+      knowing how to get your little mouse arrow to <span>dance</span> and
+      <span>sway</span> was the most of your worries.
+
+      <br /><br />Each of the cursor effects below are built for your modern
+      browser (fast, efficient, mobile friendly), and are super easy to add to
+      your site!
+
+      <br /><br />
+      To get started adding a cursor effect to your site, check out the
+      documentation
+      <a href="https://github.com/tholman/cursor-effects">on GitHub.</a>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Rainbow</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            A little color never hurt anyone
+          </div>
+        </div>
+        <div id="rainbow" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Clock</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            An old classic, more ugly than useful, but lovable for sure
+          </div>
+        </div>
+        <div id="clock" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Fairy Dust</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            An old classic, sprinkling stardust onto the page
+          </div>
+        </div>
+        <div id="fairyDust" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Ghost</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            A trailing of ghost cursors, as classic as they come
+          </div>
+        </div>
+        <div id="ghost" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Trailing</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            An elasticish trail of cursors that will nip to wherever your mouse is
+          </div>
+        </div>
+        <div id="trailing" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Following Dot</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            A dot that follows your mouse with a little lag, a modern look
+          </div>
+        </div>
+        <div id="following" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Elastic Emoji</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">Guaranteed to provide fun for hours</div>
+        </div>
+        <div id="springs" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Emoji Rain</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            A nice modern dusting of emoji based particles
+          </div>
+        </div>
+        <div id="emoji" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Bubbles</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">Bloop bloop bloop, you're under the sea</div>
+        </div>
+        <div id="bubbles" class="effect"></div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="box">
+        <div class="info">
+          <div class="name">
+            <span>Snowflakes</span
+            ><a href="https://github.com/tholman/cursor-effects"
+              >+ to your site</a
+            >
+          </div>
+          <div class="byline">
+            Winter is here, and it's brought snow with it
+          </div>
+        </div>
+        <div id="snowflake" class="effect"></div>
+      </div>
+    </div>
+
+    <script async src="./index.js"></script>
+
+    <div class="wrapper">
+      If you're a fan of this project, or have any ideas or submissions, or some
+      neato old effects that need modernization send them in via
+      <a href="https://github.com/tholman/cursor-effects">GitHub!</a>
+
+      <br /><br />
+      <div class="center">🔥 🔥 🔥 🔥 🔥 🔥</div>
+      If you use any of these effects, please consider
+      <a href="https://github.com/sponsors/tholman">sponsoring me on GitHub</a>
+      or
+      <a href="https://www.buymeacoffee.com/tholman">shouting me a coffee</a>,
+      all keeps me going!
+      <div class="center">🔥 🔥 🔥 🔥 🔥 🔥</div>
+
+      <br /><br />
+
+      You can also follow me for lots of JS junk on twitter. Here I am:
+      <a href="https://twitter.com/twholman">@twholman</a>, and here's all my previous <a href="https://tholman.com">JS junk</a>
+    </div>
+
+    <a href="https://github.com/tholman/cursor-effects" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#54b2f0; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  </body>
 </html>
-
-
