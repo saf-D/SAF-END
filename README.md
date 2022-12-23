@@ -6,4 +6,4 @@ We are a **nice** team.
 
 **Please support us.**
 
-[Chinese]() | [English](https://github.com/saf-D/saf1/blob/main/README.md)
+[简体中文](https://github.com/saf-D/saf1/blob/main/README_zh.md) | [English](https://github.com/saf-D/saf1/blob/main/README.md)
