@@ -6,4 +6,4 @@
 
 **请支持我们！**
 
-[简体中文]() | [English](https://github.com/saf-D/saf1/blob/main/README.md)
+[简体中文](https://github.com/saf-D/saf1/blob/main/README_zh.md) | [English](https://github.com/saf-D/saf1/blob/main/README.md)
