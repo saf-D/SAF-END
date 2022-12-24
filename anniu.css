@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --col: #333;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--col);
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+ul li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    -webkit-box-reflect: below 10px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.7)));
+       
+}
+ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    line-height: 70px;
+    z-index: 9;
+}
+ul li a i {
+    transition: 0.5s linear;
+    color: var(--color);
+    transform: scale(0.7);
+}
+ul li::before {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 25px;
+    box-shadow: 0 0 0 5px var(--color), 0 0 0 12px var(--col), 0 0 0 14px var(--color);
+    transition: 0.5s linear;
+}
+ul li::after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 10px;
+    background-color: var(--col);
+    transform: rotate(45deg);
+    transition: 0.5s linear;
+}
+ul li:hover::after {
+    inset: 12px;
+    filter: drop-shadow(0 0 5px var(--color));
+}
+ul li:hover::before {
+    inset: 5px;
+    filter: drop-shadow(0 0 5px var(--color));
+}
+ul li:hover a i {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px var(--color));
+}
+
