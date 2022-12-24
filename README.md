@@ -16,7 +16,7 @@
 
 [【SAF-Home-Not Recommended】](http://safsyblog.cf/) | [【SAF-Home-Spare 1-Special Recommendation】](https://saf123.netlify.app/) | [【SAF-Home-Backup 2-Comparison Recommendation】](https://saf-d.github.io/saf1/)
 
-⚠️ **pay attention**:
+⚠️ **Pay Attention**:
 
 + [【SAF-Home-Not Recommended】](http://safsyblog.cf/) This page version update may be slow , not very stable . It is recommended to use Google Chrome to access. Sometimes show "504 Gateway Time-out" may be displayed, please visit Alternate URL 1 or Alternate URL 2!
 
