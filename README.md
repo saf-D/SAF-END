@@ -1,3 +1,5 @@
+![person](https://count.getloli.com/get/@saf-home?theme=rule34)
+
 # 👋 We are SAF
 
 👀 Welcome to the **SAF-home** page!
