@@ -1,4 +1,8 @@
+**訪問人數**：
+
 ![person](https://count.getloli.com/get/@saf-home?theme=rule34)
+
+--------------------------
 
 # 👋 我們是星漢與遠洋SAF
 
