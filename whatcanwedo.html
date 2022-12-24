@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELLO!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+        }
+
+        .item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 66px;
+            font-style: italic;
+            color: white;
+            transform: translateX(-100%);
+
+        }
+
+        .item p {
+            transform: translateX(-190%);
+        }
+
+        .yellow {
+            background: rgb(211, 208, 8);
+            animation: bg 0.3s linear forwards;
+        }
+
+        .yellow p {
+            animation: text 3s 0.3s cubic-bezier(0, .49, 0, 1) forwards;
+        }
+
+        .blue {
+            background: rgb(19, 144, 247);
+            clip: rect(0, 1100px, 100vh, 0);
+            animation: bg 2.4s 0.6s linear forwards;
+        }
+
+        .blue p {
+            animation: text 2.4s 0.6s cubic-bezier(0, .49, 0, 1) forwards;
+        }
+
+        .green {
+            background: rgb(126, 231, 65);
+            clip: rect(0, 920px, 100vh, 0);
+            animation: bg 2.1s 0.9s linear forwards;
+        }
+
+        .green p {
+            animation: text 2.1s 0.9s cubic-bezier(0, .49, 0, 1) forwards;
+        }
+
+        .pink {
+            background: #e208d0;
+            clip: rect(0, 780px, 100vh, 0);
+            animation: bg 1.8s 1.2s linear forwards;
+        }
+
+        .pink p {
+            animation: text 1.8s 1.2s cubic-bezier(0, .49, 0, 1) forwards;
+        }
+
+        @keyframes bg {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+
+        }
+
+        @keyframes text {
+            from {
+                transform: translateX(-190%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item yellow">
+            <a href="homepage.html">
+                <p>Hello everyone!<br>This is our personal website </p>
+            </a>
+        </div>
+        <div class="item blue">
+            <a href="homepage.html">
+                <p>Hello everyone!<br>This is our personal website </p>
+            </a>
+        </div>
+        <div class="item green">
+            <a href="homepage.html">
+                <p>Hello everyone!<br>This is our personal website </p>
+            </a>
+        </div>
+        <div class="item pink">
+            <a href="homepage.html">
+                <p>Hello everyone!<br>This is our personal website </p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
