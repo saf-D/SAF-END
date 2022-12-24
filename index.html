@@ -13,7 +13,7 @@ function time() {
   t_div = document.getElementById('showtime');
   var now = new Date()
   setTimeout(time, 1000);
-  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() - 1;
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + 1;
   t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
 }
 /* 计算运行天数的封装函数 */
