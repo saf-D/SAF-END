@@ -13,14 +13,14 @@ function time() {
   t_div = document.getElementById('showtime');
   var now = new Date()
   setTimeout(time, 1000);
-  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + 1;
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "-1";
   t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
 }
 /* 计算运行天数的封装函数 */
-function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2002-12-18格式  
+function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式  
   var  aDate,  oDate1,  oDate2,  iDays  
   aDate  =  sDate1.split("-")  
-  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-18-2002格式  
+  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-23-2022格式  
   aDate  =  sDate2.split("-")  
   oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
   iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
