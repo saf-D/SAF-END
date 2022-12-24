@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAF-new year</title>
+  <script>
+/* 时间 */
+function time() {
+  t_div = document.getElementById('showtime');
+  var now = new Date()
+  setTimeout(time, 1000);
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "-1";
+  t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
+}
+/* 计算运行天数的封装函数 */
+function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式  
+  var  aDate,  oDate1,  oDate2,  iDays  
+  aDate  =  sDate1.split("-")  
+  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-23-2022格式  
+  aDate  =  sDate2.split("-")  
+  oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
+  iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
+  return  iDays  
+}
+</script>  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+</head>
+<style type="text/css">
+body {
+    /* 背景颜色*/
+    background-color: #c6070c;
+    /* 字体颜色 */
+    color: #ffe392;
+    /* 文字居中 */
+    text-align: center;
+}
+table {
+    padding-top: 100px;
+    /* 居中 */
+    margin: auto;
+    /* 宽比例 */
+    width: 50%;
+}
+.pinyin {
+    height: 20px;
+    /* 字母间距 */
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+td {
+    font-size: 158px;
+    text-align: center;
+    font-weight: 700;
+    padding: 0px;
+}
+h2 {
+    margin-top: 15px;
+    margin-bottom: 100px;
+    font-size: 38px;
+    text-transform: uppercase;
+    font-weight: 700;
+    word-spacing: 5px;
+}
+p {
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+button {
+    background-color: #ef941a;
+    color: #fffbe2;
+    width: 200px;
+    position: relative;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    line-height: 0.5;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+button:hover,
+button:focus {
+    background-color: #efa134;
+}
+button:active {
+    transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+}
+</style>
+<body>
+ <h1>快来抽取祝福语！</h1></br></br></br></br>
+<table>
+    <tr>
+        <th class="pinyin" id="pinyin1">xīn</th>
+        <th class="pinyin" id="pinyin2">nián</th>
+        <th class="pinyin" id="pinyin3">kuài</th>
+        <th class="pinyin" id="pinyin4">lè</th>
+    </tr>
+    <tr>
+        <td id="jeskson1">新</td>
+        <td id="jeskson2">年</td>
+        <td id="jeskson3">快</td>
+        <td id="jeskson4">樂</td>
+    </tr>
+</table>
+ 
+<h2 id="dadaEnglish">(新年快乐)</h2>
+ 
+<button type="button" id="button">
+    <p>点我抽祝福语！</p>
+</button>
+ 
+<script type="text/javascript">
+var pinyin1 = document.getElementById("pinyin1");
+var pinyin2 = document.getElementById("pinyin2");
+var pinyin3 = document.getElementById("pinyin3");
+var pinyin4 = document.getElementById("pinyin4");
+ 
+var jeskson1 = document.getElementById("jeskson1");
+var jeskson2 = document.getElementById("jeskson2");
+var jeskson3 = document.getElementById("jeskson3");
+var jeskson4 = document.getElementById("jeskson4");
+ 
+var dadaEnglish = document.getElementById("dadaEnglish");
+ 
+var button = document.getElementById("button");
+var random = Math.random();
+ 
+var p1 = [
+    "xīn",
+    "gōng",
+    "dà",
+    "wàn",
+    "nián",
+    "shēn",
+    "xīn",
+    "gōng"
+];
+ 
+var p2 = [
+    "nián",
+    "xǐ",
+    "jí",
+    "shì",
+    "nián",
+    "tǐ",
+    "xiǎng",
+    "hè"
+];
+ 
+var p3 = [
+    "kuài",
+    "fā",
+    "dà",
+    "rú",
+    "yǒu",
+    "jiàn",
+    "shì",
+    "xīn"
+];
+ 
+var p4 = [
+    "lè",
+    "cái",
+    "lì",
+    "yì",
+    "yú",
+    "kāng",
+    "chéng",
+    "xǐ"
+];
+ 
+var dadasC1 = [
+    "新",
+    "恭",
+    "大",
+    "萬",
+    "年",
+    "身",
+    "心",
+    "恭"
+];
+ 
+var dadasC2 = [
+    "年",
+    "喜",
+    "吉",
+    "事",
+    "年",
+    "體",
+    "想",
+    "賀"
+];
+ 
+var dadasC3 = [
+    "快",
+    "發",
+    "大",
+    "如",
+    "有",
+    "健",
+    "事",
+    "新"
+];
+ 
+var dadasC4 = [
+    "樂",
+    "財",
+    "利",
+    "意",
+    "餘",
+    "康",
+    "成",
+    "禧"
+];
+var dadasE = [
+    "(新年快乐)",
+    "(祝贺你的成功)",
+    "(吉星高照)",
+    "(愿一万件事都按你的愿望去做吗)",
+    "(每一年都比你需要的多)",
+    "(祝您身体健康)",
+    "(愿你心想事成)",
+    "(恭贺新禧)"
+];
+pinyin1.textContent = p1[Math.floor(random * p1.length)];
+pinyin2.textContent = p2[Math.floor(random * p2.length)];
+pinyin3.textContent = p3[Math.floor(random * p3.length)];
+pinyin4.textContent = p4[Math.floor(random * p4.length)];
+jeskson1.textContent = dadasC1[Math.floor(random * dadasC1.length)];
+jeskson2.textContent = dadasC2[Math.floor(random * dadasC2.length)];
+jeskson3.textContent = dadasC3[Math.floor(random * dadasC3.length)];
+jeskson4.textContent = dadasC4[Math.floor(random * dadasC4.length)];
+dadaEnglish.textContent = dadasE[Math.floor(random * dadasE.length)];
+var onClick = function() {
+    var random = Math.random();
+    pinyin1.textContent = p1[Math.floor(random * p1.length)];
+    pinyin2.textContent = p2[Math.floor(random * p2.length)];
+    pinyin3.textContent = p3[Math.floor(random * p3.length)];
+    pinyin4.textContent = p4[Math.floor(random * p4.length)];
+    jeskson1.textContent = dadasC1[Math.floor(random * dadasC1.length)];
+    jeskson2.textContent = dadasC2[Math.floor(random * dadasC2.length)];
+    jeskson3.textContent = dadasC3[Math.floor(random * dadasC3.length)];
+    jeskson4.textContent = dadasC4[Math.floor(random * dadasC4.length)];
+    dadaEnglish.textContent = dadasE[Math.floor(random * dadasE.length)];
+}
+ 
+button.addEventListener("click", onClick);
+</script>
+</br></br></br></br></br>
+<button type="button" id="button" onclick="location.reload ();">
+    <p>点我刷新</p>
+</button>
+</br></br></br></br></br>
+<p align="center" style='color:white'>SY2022 Powered by saf_D</p>
+</br>
+<p align="center" style='color:white'>DIY by saf_D dkx11111@163.com</p>
+</br>
+<p id="showtime" align="center" style='color:white'></p>
+<script>
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+    </script>
+ </br>
+    <div id="dateTime" align="center" style='color:white'></div>
+</br>
+<p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:white'>萌ICP备20228830号</a></p>
+     <script>
+        //鼠标点击出现爱心特效  这部分特效是从一个网页搬过来的  觉得挺好看的
+        (function (window, document, undefined) {
+            var hearts = [];
+            window.requestAnimationFrame = (function () {
+                return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback) {
+				    setTimeout(callback, 1000 / 60);
+				}
+            })();
+            init();
+            function init() {
+                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                attachEvent();
+                gameloop();
+            }
+            function gameloop() {
+                for (var i = 0; i < hearts.length; i++) {
+                    if (hearts[i].alpha <= 0) {
+                        document.body.removeChild(hearts[i].el);
+                        hearts.splice(i, 1);
+                        continue;
+                    }
+                    hearts[i].y--;
+                    hearts[i].scale += 0.004;
+                    hearts[i].alpha -= 0.013;
+                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent() {
+                var old = typeof window.onclick === "function" && window.onclick;
+                window.onclick = function (event) {
+                    old && old();
+                    createHeart(event);
+                }
+            }
+            function createHeart(event) {
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                    el: d,
+                    x: event.clientX - 5,
+                    y: event.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: randomColor()
+                });
+                document.body.appendChild(d);
+            }
+            function css(css) {
+                var style = document.createElement("style");
+                style.type = "text/css";
+                try {
+                    style.appendChild(document.createTextNode(css));
+                } catch (ex) {
+                    style.styleSheet.cssText = css;
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+            }
+            function randomColor() {
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+            }
+        })(window, document);
+    </script>
+</body>
+</html>
