@@ -8,7 +8,7 @@
 
 [【SAF-首頁-不太推薦】](http://safsyblog.cf/) | [【SAF-首頁-備用1-特別推薦】](https://saf123.netlify.app/) | [【SAF-首頁-備用2-比較推薦】](https://saf-d.github.io/saf1/)
 
-**以上是我們的頁面**
+**以上是我們的頁面。**
 
 **註意**：
 
