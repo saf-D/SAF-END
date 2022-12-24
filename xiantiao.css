@@ -1,0 +1,49 @@
+div {
+    position: relative;
+    margin: 200px auto;
+    width: 120px;
+    line-height: 64px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background: gold;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+div::before,
+div::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    right: -40px;
+    bottom: -40px;
+    border: 4px solid gold;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
+}
+div::after {
+    animation: clippath 3s infinite -1.5s linear;
+}
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0px 0px 0px 98%);
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        clip-path: inset(0px 0px 98% 0);
+        filter: hue-rotate(90deg);
+    }
+    50% {
+        clip-path: inset(0px 98% 0px 0);
+        filter: hue-rotate(180deg);
+    }
+    75% {
+        clip-path: inset(98% 0px 0px 0);
+        filter: hue-rotate(270deg);
+    }
+}
+
