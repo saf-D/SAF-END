@@ -4,9 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星汉与远洋-友链</title>
+    <title>SAF-friendlink</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+<script>
+/* 时间 */
+function time() {
+  t_div = document.getElementById('showtime');
+  var now = new Date()
+  setTimeout(time, 1000);
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "-1";
+  t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
+}
+/* 计算运行天数的封装函数 */
+function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式  
+  var  aDate,  oDate1,  oDate2,  iDays  
+  aDate  =  sDate1.split("-")  
+  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-23-2022格式  
+  aDate  =  sDate2.split("-")  
+  oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
+  iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
+  return  iDays  
+}
+</script>
+
     <style>
         * {
             margin: 0;
@@ -14,7 +35,7 @@
         }
 
         body {
-            background: url(timg1MHDVFRB.jpg) no-repeat;
+            background-color: black;
             background-size: cover;
         }
 
@@ -91,7 +112,39 @@
             font-style: italic;
         }
     </style>
+    
+    
+    
+
+    
+    
+
 </head>
-<body>
-  <p>维护中……QWQ</p>
+
+<body onload="time()">
+    <div class="nav">
+        <a href="index.html">首页</a>
+        <a href="https://saf123.mysxl.cn/" target="_blank">介绍</a>
+        <a href="https://hydro.ac/d/SAFOJ/" target="_blank">OJ</a>
+        <a href="https://safnotice.mysxl.cn/" target="_blank">公告</a>
+        <a href="https://xydh.fun/safdh" target="_blank">导航</a>
+        <a href="friendlink.html" target="_blank">友链</a>
+        <a href="search.html" target="_blank">搜索</a>
+        <a href="list.html" target="_blank">功能</a>
+        <a href="wearesaf.html" target="_blank">关于</a>
+        <a href="whatcanwedo.html" target="_blank">我们</a>
+    </div>
+<script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+</br></br></br></br></br></br>
+<p align="center" style='color:white'>SY2022 Powered by saf_D</p>
+</br>
+<p align="center" style='color:white'>DIY by saf_D dkx11111@163.com</p>
+</br>
+<p id="showtime" align="center" style='color:white'></p>
+
+
+
 </body>
+
+</html>
