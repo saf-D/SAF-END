@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh">
+  
+<head> 
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <title>SAF-new year rain</title>
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+ <style type="text/css">
+  html, body {
+   width: 100%;
+   height: 100%;
+  }
+  body {
+   background: #000;
+   overflow: hidden;
+   margin: 0;
+   padding: 0;
+  }
+ </style>
+</head>
+  
+<body> 
+<canvas id="cvs"></canvas>
+<script type="text/javascript">
+ var cvs = document.getElementById("cvs");
+ var ctx = cvs.getContext("2d");
+ var cw = cvs.width = document.body.clientWidth;
+ var ch = cvs.height = document.body.clientHeight;
+ //动画绘制对象
+ var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+ var codeRainArr = []; //代码雨数组
+ var cols = parseInt(cw / 30); //代码雨列数
+ var step = 40;  //步长，每一列内部数字之间的上下间隔
+ ctx.font = "bold 26px STKaiti"; //声明字体，个人喜欢微软雅黑
+ 
+ function createColorCv() {
+  //画布基本颜色
+  ctx.fillStyle = "#24242";
+  ctx.fillRect(0, 0, cw, ch);
+ }
+ 
+ //创建代码雨
+ function createCodeRain() {
+  for (var n = 0; n < cols; n++) {
+   var col = [];
+   //基础位置，为了列与列之间产生错位
+   var basePos = parseInt(Math.random() * 1100);
+   //速度 
+   var speed = parseInt(Math.random() * 1) + 1;
+   //每组的x轴位置随机产生
+   var colx = parseInt(Math.random() * cw)
+ 
+   //绿色随机
+   var rgbr = parseInt(Math.random() * 255);
+   var rgbg = parseInt(Math.random() * 255);
+   var rgbb = parseInt(Math.random() * 255);
+   //ctx.fillStyle = "rgb("+r+','+g+','+b+")"
+ 
+   for (var i = 0; i < parseInt(ch / step) / 2; i++) {
+    var code = {
+     x: colx,
+     y: -(step * i) - basePos,
+     speed: speed,
+     //text : parseInt(Math.random()*10)%2 == 0 ? 0 : 1 //随机生成0或者1
+     text: ["新", "年", "快", "乐" , "S", "A", "F" , "喜", "迎", "新", "春" , "恭", "喜", "发", "财" , "大", "吉", "大", "利"][parseInt(Math.random() * 11)], //随机生成字母数组中的一个
+     color: "rgb(" + rgbr + ',' + rgbg + ',' + rgbb + ")"
+    }
+    col.push(code);
+   }
+   codeRainArr.push(col);
+  }
+ }
+ 
+ //代码雨下起来
+ function codeRaining() {
+  //把画布擦干净
+  ctx.clearRect(0, 0, cw, ch);
+  //创建有颜色的画布
+  //createColorCv();
+  for (var n = 0; n < codeRainArr.length; n++) {
+   //取出列
+   col = codeRainArr[n];
+   //遍历列，画出该列的代码
+   for (var i = 0; i < col.length; i++) {
+    var code = col[i];
+    if (code.y > ch) {
+     //如果超出下边界则重置到顶部
+     code.y = 0;
+    } else {
+     //匀速降落
+     code.y += code.speed;
+    }
+    
+    //1 颜色也随机变化
+    //ctx.fillStyle = "hsl("+(parseInt(Math.random()*359)+1)+",30%,"+(50-i*2)+"%)"; 
+ 
+    //2 绿色逐渐变浅
+    // ctx.fillStyle = "hsl(123,80%,"+(30-i*2)+"%)"; 
+ 
+    //3 绿色随机
+    // var r= 0;
+    // var g= parseInt(Math.random()*255) + 3;
+    // var b= 0;
+    // ctx.fillStyle = "rgb("+r+','+g+','+b+")";
+ 
+    //4 一致绿
+    ctx.fillStyle = code.color;
+ 
+ 
+    //把代码画出来
+    ctx.fillText(code.text, code.x, code.y);
+   }
+  }
+  requestAnimationFrame(codeRaining);
+ }
+ 
+ //创建代码雨
+ createCodeRain();
+ //开始下雨吧 GO>>
+ requestAnimationFrame(codeRaining);
+</script>
+   <script>
+        //鼠标点击出现爱心特效  这部分特效是从一个网页搬过来的  觉得挺好看的
+        (function (window, document, undefined) {
+            var hearts = [];
+            window.requestAnimationFrame = (function () {
+                return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback) {
+				    setTimeout(callback, 1000 / 60);
+				}
+            })();
+            init();
+            function init() {
+                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                attachEvent();
+                gameloop();
+            }
+            function gameloop() {
+                for (var i = 0; i < hearts.length; i++) {
+                    if (hearts[i].alpha <= 0) {
+                        document.body.removeChild(hearts[i].el);
+                        hearts.splice(i, 1);
+                        continue;
+                    }
+                    hearts[i].y--;
+                    hearts[i].scale += 0.004;
+                    hearts[i].alpha -= 0.013;
+                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent() {
+                var old = typeof window.onclick === "function" && window.onclick;
+                window.onclick = function (event) {
+                    old && old();
+                    createHeart(event);
+                }
+            }
+            function createHeart(event) {
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                    el: d,
+                    x: event.clientX - 5,
+                    y: event.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: randomColor()
+                });
+                document.body.appendChild(d);
+            }
+            function css(css) {
+                var style = document.createElement("style");
+                style.type = "text/css";
+                try {
+                    style.appendChild(document.createTextNode(css));
+                } catch (ex) {
+                    style.styleSheet.cssText = css;
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+            }
+            function randomColor() {
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+            }
+        })(window, document);
+    </script>
+</body>
+</html>
