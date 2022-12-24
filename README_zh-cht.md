@@ -1,3 +1,5 @@
+![person](https://count.getloli.com/get/@saf-home?theme=rule34)
+
 # 👋 我們是星漢與遠洋SAF
 
 👀 歡迎來到我們的 **星漢與遠洋-首頁** 頁面！
