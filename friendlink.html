@@ -180,12 +180,13 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
     </div>
     
     <div class="box">
-        <img src="QQ图片20200914221312.jpg" alt="" class="box-img">
-        <h1 class="name">Chris</h1>
-        <h2>Web Designer</h2>
-        <h3>Welcome to my personal website!</h3>
-        <h3>If you want to know more about me,please click this</h3>
-        <a href="Chris2.html" class="one">Chris</a>
+        <img src="SAF.jpg" alt="" class="box-img">
+        <h1 class="name">SAF</h1>
+        <h2>We are SAF!</h2>
+        <h3 style="color：black">友链花果山</h3>
+        <h3>如果你想登上这个友链花果山</h3>
+        <h3>那就请到页面底部找到我的邮箱📫联系我吧<h3>
+        <a href="index.html" class="one">SAF-Home</a>
     </div>
 
 
@@ -197,6 +198,25 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 <p align="center" style='color:white'>DIY by saf_D dkx11111@163.com</p>
 </br>
 <p id="showtime" align="center" style='color:white'></p>
+<script>
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+    </script>
+ 
+    <div id="dateTime"></div>
 
 
 
