@@ -163,6 +163,11 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
             font-size: 80px;
             text-align:center;
         }
+        .admin h2 {
+            color: red;
+            font-size: 40px;
+            text-align:center;
+        }
     </style>
     
     
@@ -186,6 +191,12 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
         <a href="whatcanwedo.html" target="_blank">我们</a>
         <a href="check.html" target="_blank">后台</a>
     </div>
+ <div class="admin">     
+     <h1> 登录成功，<span id="myspan">5</span>秒后自动跳转到管理页面! </h1>
+         </br>
+<h2>若没有自动跳转，<p color="yellow"><a href="https://app.netlify.com/teams/saf-d/overview" target="_blank">请点我！</a></p></h2>
+      </div>
+      
      <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
 </br></br></br></br></br></br></br></br></br>
@@ -218,5 +229,24 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 
 
 </body>
+
+<script type="text/javascript"> 
+    function getLabel(id) { 
+      return document.getElementById(id); 
+    } 
+    function changeSec() { 
+      //得到myspan值，每秒减一，会进行隐士转换
+      getLabel('myspan').innerText=getLabel('myspan').innerText-1; 
+    }
+    var mytime = setInterval("changeSec()",1000); 
+    //五秒后跳转
+    function tiao() { 
+      clearInterval(mytime); 
+      //window.open("./welcome.html","_self"); 
+      window.location.href = "https://app.netlify.com/teams/saf-d/overview";
+    } 
+
+    setTimeout("tiao()",5000); 
+  </script> 
 
 </html>
