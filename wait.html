@@ -3,16 +3,7 @@
 
 <head>
     
-    
-    
-        	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="SAF">
-    
-    
-    
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAF-wait</title>
@@ -255,21 +246,15 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
     function tiao() { 
         
         
-        
-        var preUrl=document.referrer;//通过此方法拿到跳转页面的地址
-  		
-  		alert(preUrl);
-  		
-  		setTimeout("javascript:location.href='https://app.netlify.com/teams/saf-d/overview'",5000);//定时5秒后跳转到test.html页面
-      
-        
-        
+   
+              clearInterval(mytime); 
+      window.location.href = "https://app.netlify.com/teams/saf-d/overview";
         
      
     } 
   </script> 
 
-
+setTimeout("tiao()",5000); 
 
 
 
