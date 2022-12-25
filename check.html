@@ -163,6 +163,11 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
             font-size: 80px;
             text-align:center;
         }
+        .admin h2 {
+            color: red;
+            font-size: 40px;
+            text-align:center;
+        }
     </style>
     
     
@@ -189,6 +194,8 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
     </div>
   <div class="admin">
         <h1>请验证身份</h1>
+      </br>
+    <h2>非内部人员禁止入内！</h2>
     </div>
   <div class="drag">
     <div class="bg"></div>
@@ -297,7 +304,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
         return document.getElementById(id).value; 
     } 
     function checkuser() { 
-        if(getValue('uname') == "magicliu" && getValue('pwd') == "123") { 
+        if(getValue('uname') == "SAFadmin" && getValue('pwd') == "Starandfar1") { 
             return true; 
         }else { 
             alert("登录名或密码错误！")
@@ -340,5 +347,6 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 
 
 </body>
+
 
 </html>
