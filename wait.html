@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAF-admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+<script>
+/* 时间 */
+function time() {
+  t_div = document.getElementById('showtime');
+  var now = new Date()
+  setTimeout(time, 1000);
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "-1";
+  t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
+}
+/* 计算运行天数的封装函数 */
+function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式  
+  var  aDate,  oDate1,  oDate2,  iDays  
+  aDate  =  sDate1.split("-")  
+  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-23-2022格式  
+  aDate  =  sDate2.split("-")  
+  oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
+  iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
+  return  iDays  
+}
+</script>
+  
+  
+  <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: "微软雅黑";
+        }
+
+        .drag {
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #e8e8e8;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .bg {
+            width: 40px;
+            height: 100%;
+            position: absolute;
+            background-color: #75CDF9;
+        }
+
+        .text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            user-select: none;
+        }
+
+        .btn {
+            width: 40px;
+            height: 38px;
+            position: absolute;
+            border: 1px solid #ccc;
+            cursor: move;
+            font-family: "宋体";
+            text-align: center;
+            background-color: #fff;
+            user-select: none;
+            color: #666;
+        }
+    </style>
+  
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(cool.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .box {
+            width: 1200px;
+            height: 540px;
+            background: rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 7%;
+
+        }
+
+        .box .left a {
+            display: block;
+            width: 200px;
+            height: 90px;
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            padding-left: 30px;
+            line-height: 90px;
+        }
+
+        .box .left a:hover {
+            background-color: #ff6700;
+        }
+
+        .left {
+            float: left;
+            width: 230px;
+            height: 540px;
+            background-color: cadetblue;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .right {
+            float: right;
+            width: 970px;
+            height: 540px;
+            background-color: rgba(152, 233, 233, 0.2);
+            ;
+
+        }
+
+        .right>div {
+            float: left;
+            width: 470px;
+            height: 540px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-left: 14px;
+            margin-bottom: 14px;
+        }
+
+        .right .one {
+            background-color: rgb(152, 233, 233, 0.2);
+        }
+
+        .right .photo {
+            width: 490px;
+            height: 540px;
+        }
+
+        .right .one h1 {
+            color: white;
+            font-size: 60px;
+        }
+
+        .right .one p {
+            font-size: 40px;
+            font-weight: 500;
+            color: rgb(148, 241, 248);
+            font-style: italic;
+        }
+        .admin h1 {
+            color: white;
+            font-size: 80px;
+            text-align:center;
+        }
+    </style>
+    
+    
+    
+
+    
+    
+
+</head>
+  <body onload="time()">
+    <div class="nav">
+        <a href="index.html">首页</a>
+        <a href="https://saf123.mysxl.cn/" target="_blank">介绍</a>
+        <a href="https://hydro.ac/d/SAFOJ/" target="_blank">OJ</a>
+        <a href="https://safnotice.mysxl.cn/" target="_blank">公告</a>
+        <a href="https://xydh.fun/safdh" target="_blank">导航</a>
+        <a href="friendlink.html" target="_blank">友链</a>
+        <a href="search.html" target="_blank">搜索</a>
+        <a href="list.html" target="_blank">功能</a>
+        <a href="wearesaf.html" target="_blank">关于</a>
+        <a href="whatcanwedo.html" target="_blank">我们</a>
+        <a href="check.html" target="_blank">后台</a>
+    </div>
+     <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+</br></br></br></br></br></br></br></br></br>
+<p align="center" style='color:white'>SY2022 Powered by saf_D</p>
+</br>
+<p align="center" style='color:white'>DIY by saf_D dkx11111@163.com</p>
+</br>
+<p id="showtime" align="center" style='color:white'></p>
+<script>
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+    </script>
+ </br>
+    <div id="dateTime" align="center" style='color:white'></div>
+</br>
+<p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:white'>萌ICP备20228830号</a></p>
+
+
+</body>
+
+</html>
