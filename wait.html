@@ -9,6 +9,11 @@
     <title>SAF-wait</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+    <style>
+		a{
+			text-decoration: none;
+		}
+	</style>
 <script>
 /* 时间 */
 function time() {
@@ -196,7 +201,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
  <div class="admin">     
      <h1> 验证成功，<span id="myspan">5</span>秒后自动跳转到后台页面! </h1>
          </br>
-<h2>若没有自动跳转，<p color="yellow"><a href="https://app.netlify.com/teams/saf-d/overview" target="_blank">请点我！</a></p></h2>
+<h2>若没有自动跳转，<p color="yellow"><a href="admin.html" target="_blank">请点我！</a></p></h2>
       </div>
       
      <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
@@ -248,7 +253,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
         
    
               clearInterval(mytime); 
-      window.location.href= ("https://app.netlify.com/teams/saf-d/overview");
+      window.location.href= ("admin.html");
      
         
     } 
