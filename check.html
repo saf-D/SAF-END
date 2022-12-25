@@ -212,6 +212,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 </div>
 <script>
     //一、定义一个获取DOM元素的方法
+    var huakuai = false;
     var $ = function (selector) {
             return document.querySelector(selector);
         },
@@ -237,7 +238,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
         var downX = e.clientX;
         //三、给文档注册鼠标移动事件
         document.onmousemove = function (e) {
-            var huakuai = false;
+            
             var e = e || window.event;//是为了更好的兼容IE浏览器和非ie浏览器。在ie浏览器中,window.event是全局变量,在非ie中，就需要自己传入一个参数来获取event啦，所以就有了var e = e||window.event
             //1.获取鼠标移动后的水平位置
             var moveX = e.clientX;
