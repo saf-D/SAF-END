@@ -237,7 +237,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
         var downX = e.clientX;
         //三、给文档注册鼠标移动事件
         document.onmousemove = function (e) {
-
+            var huakuai = false;
             var e = e || window.event;//是为了更好的兼容IE浏览器和非ie浏览器。在ie浏览器中,window.event是全局变量,在非ie中，就需要自己传入一个参数来获取event啦，所以就有了var e = e||window.event
             //1.获取鼠标移动后的水平位置
             var moveX = e.clientX;
@@ -261,6 +261,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 
                 //1.设置滑动成功后的样式
                 text.innerHTML = "验证通过";
+                
                 text.style.color = "#fff";
                 btn.innerHTML = "&radic;";
                 btn.style.color = "green";
@@ -268,6 +269,7 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 
                 //2.设置滑动成功后的状态
                 success = true;
+                huakuai = true;
                 //成功后，清除掉鼠标按下事件和移动事件（因为移动时并不会涉及到鼠标松开事件）
                 btn.onmousedown = null;
                 document.onmousemove = null;
@@ -309,14 +311,19 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
        </div>
 </body> 
 <script type="text/javascript"> 
+    var yanzheng = false;
     function getValue(id) { 
         return document.getElementById(id).value; 
     } 
     function checkuser() { 
         if(getValue('uname') == "SAFadmin" && getValue('pwd') == "Starandfar1") { 
-            return true; 
+            yanzheng = true;
+            if(huakuai == true && yanzheng == true){
+                return true; 
+            }
         }else { 
             alert("登录名或密码错误！")
+            yanzheng = false;
             return false; 
         } 
     } 
