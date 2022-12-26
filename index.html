@@ -48,6 +48,23 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 }
 </script>
 
+	<!--离开页面改变title-->
+<script>
+var time;
+var norm_title = document.title;
+document.addEventListener('visibilitychange', function () {
+	if (document.visibilityState == 'hidden') {
+		clearTimeout(time);
+		document.title = '别走，再来看看嘛qwq';
+	} else {
+		document.title = 'SAF-';
+		time = setTimeout(function () {
+			document.title = normar_title;
+		}, 3000);
+	}
+});
+</script>
+	
     <style>
         * {
             margin: 0;
