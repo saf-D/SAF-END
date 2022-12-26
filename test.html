@@ -1,0 +1,58 @@
+
+<!--live2d-->
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/autoload.js"></script>
+<!--live2dend-->
+
+<!--放大图片-->
+<link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/zouwangblog/zoom.css">
+<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/zoom.js"></script>
+<script type='text/javascript'>$('#cnblogs_post_body img').attr('data-action', 'zoom');</script>
+<!--放大图片end-->
+
+<!--鼠标特效-->
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/mouse-click.js"></script>
+<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+<!--鼠标特效 end-->
+
+
+<!-- Music-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/APlayer.min.js"></script>
+<script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+<div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="2878443703" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="orange"></div>
+<!-- Music end -->
+
+
+<!--雪花特效1&12月自动添加-->
+
+<div class="Snow">
+    <canvas id="Snow"></canvas>
+</div>
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/xue.js"></script>
+
+
+<!--顶部加载条-->
+<link rel="stylesheet" href="https://blog-static.cnblogs.com/files/zouwangblog/nprogress.css">
+<script src="https://blog-static.cnblogs.com/files/zouwangblog/nprogress.js"></script>
+<script>
+NProgress.start();
+NProgress.done();
+</script>
+<!--离开页面改变title-->
+<script>
+var time;
+var norm_title = document.title;
+document.addEventListener('visibilitychange', function () {
+	if (document.visibilityState == 'hidden') {
+		clearTimeout(time);
+		document.title = '别走，再来看看嘛qwq';
+	} else {
+		document.title = '欢迎你哦awa';
+		time = setTimeout(function () {
+			document.title = normar_title;
+		}, 3000);
+	}
+});
+</script>
