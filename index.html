@@ -18,6 +18,8 @@
 		a{
 			text-decoration: none;
 		}
+	    
+	    
 	</style>
     <script type="text/javascript">
 document.onmousedown=click
@@ -63,9 +65,40 @@ document.addEventListener('visibilitychange', function () {
 		}, 3000);
 	}
 });
+	    </style>
+	
+	
+	
+	    <style type="text/css">
+	    	/*此为笔者网站较为个性化的鼠标指针样式，可结合个人需要自行修改*/
+body {
+	cursor: url(Arrow.cur), default;
+}
+select{
+	cursor: url(Hand.cur), pointer;
+}
+button,a:hover{
+	cursor: url(Hand2.cur), pointer;
+}
+input{
+	cursor:url(Help.cur), text;	
+}
+textarea,input:focus{
+	cursor:url(IBeam.cur), text;	
+}
+code{
+	cursor: url(Handwriting.cur), default;	
+}
+pre>code{
+	cursor: url(Copy.cur), default;	
+}
+</style>
+	
+	
+	
 </script>
 	
-    <style>
+
         * {
             margin: 0;
             padding: 0;
