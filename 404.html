@@ -24,6 +24,8 @@ a:hover{color:#838383;text-decoration:underline}
 .error-page-main{position:relative;background:#f9f9f9;margin:0 auto;width:617px;-ms-box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:50px 50px 70px}
 .error-page-main:before{content:'';display:block;height:7px;position:absolute;top:-7px;width:100%;left:0}
 .error-page-main h3{font-size:24px;font-weight:400;border-bottom:1px solid #d0d0d0}
+.error-page-main h2{font-size:30px;font-weight:500;border-bottom:1px solid #d0d0d0}
+.error-page-main h2 strong{font-size:70px;font-weight:600;margin-right:40px;color:red}
 .error-page-main h3 strong{font-size:54px;font-weight:400;margin-right:20px}
 .error-page-main h4{font-size:20px;font-weight:400;color:#333}
 .error-page-actions{font-size:0;z-index:100}
@@ -148,6 +150,9 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 <div class="error-page">
     <div class="error-page-container">
         <div class="error-page-main">
+		<h2>
+		>将在<strong<span id="myspan">120</span></strong>秒内自动跳转到主页！
+			</h2>
             <h3>
                 <strong>404</strong>SAF日爆！
             </h3>
@@ -214,4 +219,26 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
 <p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:#121111'>萌ICP备20228830号</a></p>
 
 </body>
+<script type="text/javascript"> 
+    function getLabel(id) { 
+      return document.getElementById(id); 
+    } 
+    function changeSec() { 
+      //得到myspan值，每秒减一，会进行隐士转换
+      getLabel('myspan').innerText=getLabel('myspan').innerText-1; 
+    }
+    
+    var mytime = setInterval("changeSec()",1000); 
+    //五秒后跳转
+    function tiao() { 
+        
+        
+   
+              clearInterval(mytime); 
+      window.location.href= ("index.html");
+     
+        
+    } 
+    setTimeout("tiao()",5000); 
+  </script> 
 </html>
