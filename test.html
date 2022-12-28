@@ -10,6 +10,30 @@
 			text-decoration: none;
 		}
 	</style>
+	<style type="text/css">
+	    	/*此为笔者网站较为个性化的鼠标指针样式，可结合个人需要自行修改*/
+body {
+	cursor: url(Arrow.cur), default;
+}
+select{
+	cursor: url(Hand.cur), pointer;
+}
+button,a:hover{
+	cursor: url(Hand2.cur), pointer;
+}
+input{
+	cursor:url(Help.cur), text;	
+}
+textarea,input:focus{
+	cursor:url(IBeam.cur), text;	
+}
+code{
+	cursor: url(Handwriting.cur), default;	
+}
+pre>code{
+	cursor: url(Copy.cur), default;	
+}
+</style>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
     <script type="text/javascript" src="list.js"></script>
@@ -34,6 +58,13 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
   return  iDays  
 }
 </script>
+	<style>
+	
+	body {
+            background: url(1646268-20190808213858652-132088076.jpg) no-repeat;
+            background-size: cover;
+        }
+	</style>
 </head>
 <body onload="time()" style="background-color: rgba(204,204,204,0.23)">
      <div class="nav">
@@ -99,11 +130,11 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
     </div>
 </div>
     </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-<p align="center" style='color:white'>SY2022 Powered by saf_D</p>
+<p align="center" style='color:black'>SY2022 Powered by saf_D</p>
 </br>
-<p align="center" style='color:white'>DIY by saf_D dkx11111@163.com</p>
+<p align="center" style='color:black'>DIY by saf_D dkx11111@163.com</p>
 </br>
-<p id="showtime" align="center" style='color:white'></p>
+<p id="showtime" align="center" style='color:black'></p>
 <script>
         Date.prototype.format = function (fmt) {
             var o = {
@@ -122,9 +153,9 @@ function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式
         setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
     </script>
  </br>
-    <div id="dateTime" align="center" style='color:white'></div>
+    <div id="dateTime" align="center" style='color:black'></div>
 </br>
-<p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:white'>萌ICP备20228830号</a></p>
+<p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:black'>萌ICP备20228830号</a></p>
 
 
  
