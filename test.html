@@ -5,18 +5,57 @@
     <meta charset="UTF-8">
     <title>SAF-list</title>
  
+      <style>
+		a{
+			text-decoration: none;
+		}
+	</style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
     <script type="text/javascript" src="list.js"></script>
     <link type="text/css" rel="stylesheet" href="list.css">
+    <script>
+/* 时间 */
+function time() {
+  t_div = document.getElementById('showtime');
+  var now = new Date()
+  setTimeout(time, 1000);
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "-1";
+  t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
+}
+/* 计算运行天数的封装函数 */
+function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式  
+  var  aDate,  oDate1,  oDate2,  iDays  
+  aDate  =  sDate1.split("-")  
+  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-23-2022格式  
+  aDate  =  sDate2.split("-")  
+  oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
+  iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
+  return  iDays  
+}
+</script>
 </head>
-<body style="background-color: rgba(204,204,204,0.23)">
- 
+<body onload="time()" style="background-color: rgba(204,204,204,0.23)">
+     <div class="nav">
+        <a href="index.html" target="_blank">首页</a>
+        <a href="https://saf123.mysxl.cn/" target="_blank">介绍</a>
+        <a href="https://hydro.ac/d/SAFOJ/" target="_blank">OJ</a>
+        <a href="https://safnotice.mysxl.cn/" target="_blank">公告</a>
+        <a href="https://xydh.fun/safdh" target="_blank">导航</a>
+        <a href="friendlink.html" target="_blank">友链</a>
+        <a href="search.html" target="_blank">搜索</a>
+        <a href="list.html" target="_blank">功能</a>
+        <a href="wearesaf.html" target="_blank">关于</a>
+        <a href="whatcanwedo.html" target="_blank">我们</a>
+        <a href="check.html" target="_blank">后台</a>
+    </div>
  
 <div class="fav_list">
     <div data-v-357a65ed="" class="fav_list_box">
         <div  class="fav_list_title">
-            <h3 class="fav_list_title_h3">我的收藏</h3>
+            <h3 class="fav_list_title_h3">功能</h3>
             <div class="fav_num">
-                共<span >5</span>条
+                共<span >19</span>条
             </div>
         </div>
         <div  class="my_fav_con">
@@ -59,6 +98,35 @@
         </div>
     </div>
 </div>
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<p align="center" style='color:white'>SY2022 Powered by saf_D</p>
+</br>
+<p align="center" style='color:white'>DIY by saf_D dkx11111@163.com</p>
+</br>
+<p id="showtime" align="center" style='color:white'></p>
+<script>
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+    </script>
+ </br>
+    <div id="dateTime" align="center" style='color:white'></div>
+</br>
+<p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:white'>萌ICP备20228830号</a></p>
+
+
  
 </body>
 </html>
