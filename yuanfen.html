@@ -5,9 +5,69 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <title>SAF-yuanfen</title>
+      <style>
+		a{
+			text-decoration: none;
+		}
+	</style>
+	<style type="text/css">
+	    	/*此为笔者网站较为个性化的鼠标指针样式，可结合个人需要自行修改*/
+body {
+	cursor: url(Arrow.cur), default;
+}
+select{
+	cursor: url(Hand.cur), pointer;
+}
+button,a:hover{
+	cursor: url(Hand2.cur), pointer;
+}
+input{
+	cursor:url(Help.cur), text;	
+}
+textarea,input:focus{
+	cursor:url(IBeam.cur), text;	
+}
+code{
+	cursor: url(Handwriting.cur), default;	
+}
+pre>code{
+	cursor: url(Copy.cur), default;	
+}
+</style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+    <script type="text/javascript" src="list.js"></script>
+    <link type="text/css" rel="stylesheet" href="list.css">
+    <script>
+/* 时间 */
+function time() {
+  t_div = document.getElementById('showtime');
+  var now = new Date()
+  setTimeout(time, 1000);
+  var dangqian = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "-1";
+  t_div.innerHTML="本页面已经勉强运行了："+ DateDiff("2022-12-23",dangqian) +" 天哦！";
+}
+/* 计算运行天数的封装函数 */
+function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2022-12-23格式  
+  var  aDate,  oDate1,  oDate2,  iDays  
+  aDate  =  sDate1.split("-")  
+  oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-23-2022格式  
+  aDate  =  sDate2.split("-")  
+  oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
+  iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
+  return  iDays  
+}
+</script>
+	<style>
+	
+	body {
+            background: url(1646268-20190808213858652-132088076.jpg) no-repeat;
+            background-size: cover;
+        }
+	</style>
     </head>
-    </body>
-<div id="if">
+    <body  onload="time()" >
+      <div id="if">
   <h1 style="text-align: center;">测缘分</h1>
   <form>
     <label for="nameA">A的姓名：</label>
@@ -97,5 +157,36 @@
     }
   </style>
 </div>
+      </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<p align="center" style='color:black'>SY2022 Powered by saf_D</p>
+</br>
+<p align="center" style='color:black'>DIY by saf_D dkx11111@163.com</p>
+</br>
+<p id="showtime" align="center" style='color:black'></p>
+<script>
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+    </script>
+ </br>
+    <div id="dateTime" align="center" style='color:black'></div>
+</br>
+<p style="text-align: center"><a href="https://icp.gov.moe/?keyword=20228830" target="_blank" style='color:black'>萌ICP备20228830号</a></p>
+
+    </body>
+    
+
 </html>
 
