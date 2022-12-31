@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>SAF-yuanfen</title>
+    </head>
+    </body>
+<div id="if">
+  <h1 style="text-align: center;">测缘分</h1>
+  <form>
+    <label for="nameA">A的姓名：</label>
+    <input type="text" id="nameA" value="" placeholder="输入" required="required" />
+    <br />
+    <label for="nameB">B的姓名：</label>
+    <input type="text" id="nameB" value="" placeholder="输入" required="required" />
+    <br />
+    <input id="box" type="button" value="测试" onclick="cal();" />
+  </form>
+  <p>
+    <span id="textA">A</span>与<span id="textB">B</span>的缘分值为：<span id="rate">？？？</span>分
+  </p>
+  <p class="info"><b>仅供娱乐，请勿当真！！！</b></p>
+  <script>
+    // const Swal = require('sweetalert2')
+    function cal () {
+      var name_A = document.getElementById('nameA').value
+      var name_B = document.getElementById('nameB').value
+      if (!(name_A && name_B)) {
+        alert('请将表单填写完整！！！QWQ')
+        return false
+      }
+      var sum_A = 0
+      var sum_B = 0
+      for (var i = 0; i < name_A.length; i++) {
+        sum_A += name_A.charCodeAt(i)
+      }
+      for (var i = 0; i < name_B.length; i++) {
+        sum_B += name_B.charCodeAt(i)
+      }
+      var Rate = Math.sqrt(sum_A) + Math.sqrt(sum_B)
+      Rate -= parseInt(Rate)
+      Rate *= 100
+      Rate = (+(Math.round(Rate + "e4")  + "e-4")).toFixed(4)
+      var eleL = document.getElementById('textA')
+      var eleM = document.getElementById('textB')
+      var eleR = document.getElementById('rate')
+      eleL.innerHTML = name_A
+      eleM.innerHTML = name_B
+      eleR.innerHTML = Rate
+      return true
+    }
+  </script>
+  <style>
+    #if * {
+      margin: 5px;
+      text-align: center;
+    }
+    #if {
+      font: 150% Microsoft Yahei, '微软雅黑', 'Helvetica Neue', 'Helvetica', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'sans-serif';
+      color: #400;
+      background: #fee;
+      border-radius: 5px;
+      border: 3px solid #400;
+    }
+    #if *::selection {
+      background-color: #8333;
+    }
+    input {
+      width: 100px;
+      padding: 3px 5px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #800;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      outline: none;
+      color: #400;
+      background-color: #fdd;
+      text-align: left;
+      font-size: 20px;
+      border-radius: 3px;
+    }
+    input[type='button'] {
+      width: auto;
+    }
+    input[type='text']:focus {
+      border: 2px solid #c00;
+      background-color: #fee;
+    }
+    #textA,
+    #textB,
+    #rate {
+      font-size: 30px;
+      color: #e00;
+    }
+  </style>
+</div>
+</html>
+
